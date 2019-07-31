@@ -2,7 +2,7 @@
  <div>
 
    <h1>详情页</h1>   
-
+    <div style="width:100%;height:700px;background:red;"></div>
 
  </div>
 </template>

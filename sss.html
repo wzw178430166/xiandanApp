@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>多行文本实现超出...</title>
+<style type="text/css">
+    .twoLine {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*第三行显示 ...*/
+        -webkit-box-orient: vertical;
+    }
+</style>
 </head>
+
 <body>
-    <h1>1111111</h1>
+<div class="twoLine">测试文本测试文本测试文本测试文本本测试文本测试文本测试文</div>
 </body>
 </html>

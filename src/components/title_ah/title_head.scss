@@ -1,6 +1,6 @@
 $host:"http://127.0.0.1:5050/";
 .myhead{width:100%;height: 3.4rem;box-sizing: border-box;
-    position: fixed;top:0;display: flex;background-color: #FF9C26;
+    position: fixed;top:0;display: flex;background-color: #FF9C26;z-index: 999;
   }
   .myhead .head_logo{width:29%;height: 100%;background: url($host+'img/index/head_logo.png') no-repeat center;
   background-size: 90%;}

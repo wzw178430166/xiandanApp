@@ -42,26 +42,262 @@
     </div>
     <div class="title_msright"><!--2019/8/14 23:59 -->
                 <!-- <span>距结束</span><span class="jieshuee" id="reverse" :data-time="new Date(products.shelf_time).toLocaleString()"> -->
-                   <span>今日咸鸭蛋</span><span class="jieshuee" id="reverse" data-time="2019/9/14 23:59">
-                <em>00</em> <span>:</span>
-                <em>00</em> <span>:</span>
+                   <span class="nav_today">今日咸鸭蛋</span><span class="jieshuee" id="reverse" data-time="2019/9/14 23:59">
+                <em style="display:none">00</em> <span class="spandou" style="display:none">:</span>  
+                <em class="spannode">00</em> <span class="spandou">:</span>
+                <em>00</em> <span class="spandou">:</span>
                 <em>00</em> 
                 </span>
                 <span class="title_router"><a href="#">更多></a></span>
             </div>
-
-            <div class="nav_content">
-             <div></div>
-             <div></div>
+             <!-- 首页轮播图  -->
+             <carousel :list=pics></carousel>
+               <!-- 结束首页轮播图 -->
+             <!-- 闪购.团购开始 -->
+                <div class="title_msright title_two"><!--2019/8/14 23:59 -->
+                <!-- <span>距结束</span><span class="jieshuee" id="reverse" :data-time="new Date(products.shelf_time).toLocaleString()"> -->
+                   <span class="nav_group">闪购.团购</span>
+                <span class="title_router"><a href="#">更多></a></span>
             </div>
+            <div class="nav_content">
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+              <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+               <div class="nav_article">
+                <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                   <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                    <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                   </router-link>
+             </div>
+              <div class="nav_article">
+                   <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+            </div>
+                <!-- 闪购.团购结束 -->
+                <!-- 开始抢购 -->
+                    <div class="title_msright title_two"><!--2019/8/14 23:59 -->
+                <!-- <span>距结束</span><span class="jieshuee" id="reverse" :data-time="new Date(products.shelf_time).toLocaleString()"> -->
+                   <span class="nav_limit">限时抢购</span>
+                <span class="title_router"><a href="#">更多></a></span>
+            </div>
+            <div class="nav_content" id="nactive_two">
+             <div class="nav_article">
+                 <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width98">￥259.00<del>￥69.00</del></p>
+                 <!-- 定时器 -->
+                 <p class="com_width97">
+                <span>还剩</span>
+               <span class="jieshuee" id="reverse1" data-time="2019/9/14 23:59">
+                <em>00</em> <span class="spandou">天</span>
+                <em>00</em> <span class="spandou">时</span>
+                <em>00</em> <span class="spandou">分</span>
+                <em>00</em> <span class="spandou">秒</span>
+                </span></p>
+                  </router-link>
+                <!-- 结束定时器 -->
+             </div>
+              <div class="nav_article">
+                   <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                <p class="com_width98">￥259.00<del>￥69.00</del></p>
+                  <p class="com_width97">
+                <span>还剩</span>
+               <span class="jieshuee" id="reverse2" data-time="2019/9/14 23:59">
+                <em>00</em> <span class="spandou">天</span>
+                <em>00</em> <span class="spandou">时</span>
+                <em>00</em> <span class="spandou">分</span>
+                <em>00</em> <span class="spandou">秒</span>
+                </span></p>
+                 </router-link>
+             </div>
+               <div class="nav_article">
+                    <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                  <p class="com_width98">￥259.00<del>￥69.00</del></p>
+                   <p class="com_width97">
+                <span>还剩</span>
+               <span class="jieshuee" id="reverse3" data-time="2019/9/14 23:59">
+                <em>00</em> <span class="spandou">天</span>
+                <em>00</em> <span class="spandou">时</span>
+                <em>00</em> <span class="spandou">分</span>
+                <em>00</em> <span class="spandou">秒</span>
+                </span></p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                    <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                  <p class="com_width98">￥259.00<del>￥69.00</del></p>
+                  <p class="com_width97">
+                <span>还剩</span>
+               <span class="jieshuee" id="reverse4" data-time="2019/9/14 23:59">
+                <em>00</em> <span class="spandou">天</span>
+                <em>00</em> <span class="spandou">时</span>
+                <em>00</em> <span class="spandou">分</span>
+                <em>00</em> <span class="spandou">秒</span>
+                </span></p>
+                </router-link>
+             </div>
+            </div>
+                 <!-- 结束抢购 -->
+                <!-- 猜你喜欢开始 -->
+                 <div class="title_msright title_two">
+                   <span class="nav_like">猜你喜欢</span>
+                <span class="title_router"><a href="#">更多></a></span>
+            </div>
+                 <div class="nav_content">
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+              <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+               <div class="nav_article">
+                <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                   <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                    <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                   </router-link>
+             </div>
+              <div class="nav_article">
+                   <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                  </router-link>
+             </div>
+              <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+             <div class="nav_article">
+                  <router-link to="/details">
+                 <img :src="`${host}img/index/content/01.jpg`" alt="">
+                 <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                 <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                 <p class="com_width98">￥259.00</p>
+                 </router-link>
+             </div>
+            </div>
+                 <!-- 结束猜你喜欢 -->
  </div>
 </template>
 <script>
 import Title_head from '../../components/title_ah/Title_head'
+import Carousel from '../../components/lunbo/Carousel'
 export default {
     data(){
         return {
-           host:this.host
+           host:this.host, //域名
+            pics:[//轮播图片
+                {sm:'http://127.0.0.1:5050/img/lunbotu/01.jpg'},
+                {sm:'http://127.0.0.1:5050/img/lunbotu/02.jpg'}
+            ],  
         }
     },
     methods:{
@@ -98,17 +334,17 @@ export default {
                 }else if(s < 0){
                     s = 0;
                 }
-               // ee[0].innerHTML = d; 天数
-                ee[0].innerHTML = h;
-                ee[1].innerHTML = m;
-                ee[2].innerHTML = s;
+                ee[0].innerHTML = d; //天数
+                ee[1].innerHTML = h;
+                ee[2].innerHTML = m;
+                ee[3].innerHTML = s;
                 if(a <= b){//当我们的时间到期的时候，清除计时器，然后把当前标签的内容设置为0；
                     clearInterval(timer);
                     obj.innerHTML="";
                 }
             },1000)
             },
-        addw(){
+        addw(){  //请求文件
           console.log(111);
           axios.get('./sss.html'
           ).then(res=>{console.log(res)});
@@ -116,13 +352,18 @@ export default {
     },
     mounted() {
        this.brinobj('reverse'); //今日好蛋倒计时
+       this.brinobj('reverse1'); //今日好蛋倒计时
+        this.brinobj('reverse2'); //今日好蛋倒计时
+       this.brinobj('reverse3'); //今日好蛋倒计时
+        this.brinobj('reverse4'); //今日好蛋倒计时    
     },
     created:function(){
    
     },
  //注册轮播子组件
   components:{
-    "title_head":Title_head
+    "title_head":Title_head,
+    "carousel":Carousel
   }
 }
 

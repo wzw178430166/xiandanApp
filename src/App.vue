@@ -4,7 +4,23 @@
  </div>
 </template>
 
+<script>
+export default {
+    data(){
+       return {
+          foots:document.body.clientHeight
+       }
+    },
+    mounted:function(){
+      console.log(document.body.clientHeight);
+    } 
+}
+</script>
+
 <style>
+.mint-swipe-indicators{left: 90%!important;}
+.mint-swipe-indicator.is-active{background-color:#FF4600!important;}
+.mint-swipe-indicator{background: #CCCCCC!important;opacity: 1!important;}
    .mint-searchbar{background-color:#FF9C26!important;}
    .app-container{
      padding-top:0px;

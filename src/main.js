@@ -18,7 +18,11 @@ Vue.config.productionTip = false
 //5: 设置请求的根路径 
 //Vue.http.options.root = "http://127.0.0.1/vue_ser/";
 //6:全局设置post 时候表音的数据组织格式为 application/x-www-form-urlencoded
-Vue.prototype.host="http://127.0.0.1:5050/"
+
+Vue.prototype.host="http://127.0.0.1:5050/"  //域名
+//import Myfooter from './components/footer/Footert'
+//Vue.component("my-footer",Myfooter); //放在App.vue容器里，引用对象，加上标签名
+
 new Vue({
   router,
   store:mystore, 

@@ -215,7 +215,7 @@ function fadeout(ele, opacity, speed) {
                  }
 
   //自定义ajax 用原生js写的方法。。调用时候用对象解构。。跟jq功能 $.ajax 一样
-function ajax({url,type,data,dataType}){    
+  export function ajax({url,type,data,dataType}){    
     return new Promise(function(open,err){
         //1. 创建xhr对象
         var xhr=new XMLHttpRequest();

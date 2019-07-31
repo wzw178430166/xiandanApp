@@ -1,3 +1,4 @@
+$host:"http://127.0.0.1:5050/";
 .nav_index{width:100%;display:flex;margin-top: 3.8rem;
     box-sizing: border-box;justify-content:space-around;text-align:center;
     .wid{display:inline-block;width:20%;height:100%;
@@ -11,12 +12,56 @@
 }
 .nav-itme{margin-top: .8rem;}
 
+.title_two{margin-top: 0!important;}
 .title_msright{line-height: .8rem;text-align: left;padding-right: 1rem;
-    color: #666;background-color: #F3F3F3;
+    color: #666;background-color: #F3F3F3;padding-left: 1rem;
     font-size: 1rem;width:100%;height: 3rem;line-height: 3rem;margin-top: 1.2rem;
+    .spandou{padding:0 .5rem 0 .5rem}
    .title_router a{float: right;color: #666;margin-right: 1rem;}
 }
-#reverse em{background-color: black;color: white;padding: 7px;font-style: inherit;font-size:.9rem;font-weight: bolder;border-radius:5px;}
+#reverse em{background-color: black;color: white;padding: 7px;font-style: inherit;font-size:.9rem;font-weight: bolder;border-radius:5px;
+}
     #reverse em:first-child{margin-left: 10px;}
+    #reverse .spannode{margin-left: 1rem;}
 
-   .nav_content{width:100%;border:1px solid red;}
+   .nav_content{width:100%;background-color: #F3F3F3;display:flex;justify-content:space-between;flex-wrap:wrap;
+     .nav_article{width: 49%;height: 13.2rem;background-color: #FFFFFF;margin-bottom:.5rem;
+      img{width:100%;height: 8.6rem;}
+      .h2conm{ width: 95%;
+        margin: 0 auto;
+        height: 2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /*第三行显示 ...*/
+        -webkit-box-orient: vertical;
+        font-size: .8rem;
+        color: #444444;
+        line-height: 1rem;
+    }
+      .com_width97{width: 95%;
+        margin: 0 auto;
+        height: 1.2rem;line-height: 1.2rem;
+        color: #F7661F;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: .5rem;
+    }
+     .com_width98{color: #F13300;
+            margin-right: 6px;
+            font-size: 1em;
+            font-weight: bold;padding: 0 5px 0 5px;}
+    }
+}
+    #nactive_two{
+        .nav_article .com_width97{background: url('../../img/clock_icon.png') no-repeat!important;padding-left:1.3rem;color: #666;}
+        .com_width98{border-bottom: 1px solid #444444;
+        del{color:#666;font-size: .5rem;font-weight: normal;margin-left: .8rem;}
+        }
+    }
+
+    .nav_limit{font-weight: bolder;color: #E21918;font-size: 1.3rem;}
+    .nav_today{font-weight: bolder;color: #EB8276;font-size: 1.3rem;}
+    .nav_group{font-weight: bolder;color: #007ACC;font-size: 1.3rem;}
+    .nav_like{font-weight: bolder;color: #4DC92F;font-size: 1.3rem;}
