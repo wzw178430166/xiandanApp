@@ -1,0 +1,50 @@
+@import '../../components/header/headst';
+$host:"http://127.0.0.1:5050/";
+$fontcolor:"#FF9C26";
+.markingts{width:100%;height: .5rem;background-color: #DFDFDF;}
+.information{width:100%;height: 12rem;
+ .int-top{width:94%;height: 3.9rem;margin: 0 auto;padding:5px 0 5px 0;
+    position: relative;border-bottom:1px solid #A0B4DC;
+    .ht-int{width:50%;height: 100%;position: absolute;top:0;left: 0;color:#E95808;font-size: 1.5rem;font-weight: bolder;padding-top: 15px;
+    } 
+    .ht-nte{width:40%;height: 100%;position: absolute;top:0;right: 0;
+        display: flex;flex-direction:row-reverse;
+        span img{width:33px;margin-left: 20px;}} 
+}
+ .int-bottom{width:94%;margin: 0 auto;padding:15px 0 5px 0;color: #444;font-weight: bolder;line-height: 25px;
+    img{width:28px;height: 30px;}
+}  
+}
+.particulars{width:100%;
+    p:first-child{border-bottom: 1px solid #444;}
+     p{width:94%;margin: 0 auto;padding: 15px 0 15px 0;
+     a{color:#444;}
+     span{float: right;}
+    }
+}
+.specification{
+    width:100%;
+    .port{width:94%;margin: 0 auto;display: flex;padding-top:10px;
+      span{width:20%;}
+      .port_item{width:calc(100% - 20%);display: flex;justify-content:space-between;flex-wrap:wrap;
+       span{
+           height: 10px;padding:5px 10px 5px 10px;border:1px solid #E5E5E5;font-size: .7rem;
+           width:40%;margin-bottom: .5rem;text-align: center;line-height: 10px;color: #000000;;
+        }
+        .port_active{background-color: #E95808;color:white;}
+    }
+    }
+    .speed{
+        color: #444;
+        .speed_active{background-color: #E95808;color:white!important;}
+    }
+    .quantity{
+        span{width:20%!important;height: 20px!important;background-color:#fdf1fd!important;color:#1E1E1E!important;font-size: 1rem;line-height: 20px!important;border-radius: 5px!important;border:0!important;}
+       
+    }
+    .inventory{
+        span{width:90%!important;background-color:white!important;color:#666!important;overflow: hidden;border:0!important;font-size: 1rem!important;
+            text-overflow:ellipsis;
+            white-space: nowrap;}
+    }
+}

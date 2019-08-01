@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style>
+.marking{width:100%;height: 1rem;background-color: #DFDFDF;}
 .mint-swipe-indicators{left: 90%!important;}
 .mint-swipe-indicator.is-active{background-color:#FF4600!important;}
 .mint-swipe-indicator{background: #CCCCCC!important;opacity: 1!important;}

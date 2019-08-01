@@ -1,6 +1,6 @@
 <template>
  <div>
-    <title_head></title_head>
+    <index_head></index_head>
     <div class="nav_index">
           <router-link to="#" class="wid">
          <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
@@ -288,7 +288,7 @@
  </div>
 </template>
 <script>
-import Title_head from '../../components/title_ah/Title_head'
+import index_head from '../../components/index_head/Index_head'
 import Carousel from '../../components/lunbo/Carousel'
 export default {
     data(){
@@ -362,7 +362,7 @@ export default {
     },
  //注册轮播子组件
   components:{
-    "title_head":Title_head,
+    "index_head":index_head,
     "carousel":Carousel
   }
 }
