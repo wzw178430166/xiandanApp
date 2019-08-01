@@ -1,0 +1,14 @@
+$host:"http://127.0.0.1:5050/"; 
+.login_conte{width:100%;display: flex;justify-content:center;align-items: center;height: 200px;margin-top:1rem;
+    .img_login{text-align: center;margin: 0 auto;display: inline-block;}
+}
+.logn_user{
+    margin-top: 20px;
+    .checkbosx{
+        text-align: center;margin-top: 10px;
+    }
+    .dianf{width:90%;margin: 0 auto;flex-direction:row-reverse;display: flex;margin-top: 10px;
+     a{color:#666;text-decoration: underline;}
+    }
+}
+.login_usr{margin-top: 20px;}

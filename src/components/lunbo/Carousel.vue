@@ -46,7 +46,7 @@ export default {
    #content .imgs{width:100%;height:162px;}
  .mint-swipe-indicator .is-active{background-color: #C4466C!important;color:#C4466C;}
 .mint-swipe-indicator{background-color: #C4466C!important;}
-.carousel_out{width:100%;height: 162px;}
+.carousel_out{width:100%;height: 162px;position: relative;z-index: -1;}
 
 
 

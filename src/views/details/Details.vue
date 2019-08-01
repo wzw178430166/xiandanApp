@@ -1,14 +1,17 @@
 <template>
  <div>
-    <headstd></headstd>
+    <headstd msg="手提单肩包"></headstd>
     <carousel :list=pics class="carouset"></carousel>
     <p class="markingts"></p>
+    <div class="announcement">
+        <img :src="`${host}img/details/announcement.gif`" alt=""/>
+    </div>
      <div class="information">
        <div class="int-top">
            <div class="ht-int">¥ 99.00</div>
            <div class="ht-nte">
-               <span><img :src="`${host}img/details/collection.jpg`" alt=""></span>
-               <span><img :src="`${host}img/details/share.jpg`" alt=""></span>
+               <span><router-link to="#"><img :src="`${host}img/details/collection.jpg`" alt=""/></router-link></span>
+               <span><router-link to="#"><img :src="`${host}img/details/share.jpg`" alt=""/></router-link></span>
            </div>
        </div>
        <div class="int-bottom">
@@ -53,6 +56,7 @@
               </div>
           </div> 
         </div>
+         <p class="markingts"></p>
  </div>
 </template>
 <script>

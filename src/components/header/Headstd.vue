@@ -1,12 +1,12 @@
 <template>
     <div class="heads">
        <span @click="goback"></span>
-       <span>手提单肩包</span>
+       <span>{{msg}}</span>
        <span @click.stop="action='in'"></span>
     <div class="alert fade" :class="action">
 		<ul class="alert_conter">
             <li><router-link to="/Index"><p></p></router-link></li>
-            <li><router-link to="/Index"><p></p></router-link></li>
+            <li><router-link to="/login"><p></p></router-link></li>
             <li><router-link to="/Index"><p><b>1</b></p></router-link></li>
             <li @click="action=''"><span class="close"></span></li>
         </ul>
@@ -20,6 +20,10 @@ export default {
         return {
             action:""
         }
+    }
+    ,
+    props:{
+      msg:{default:""}
     }
     ,
     methods:{

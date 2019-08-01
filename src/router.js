@@ -10,6 +10,8 @@ import Details from "./views/details/Details.vue"  //详情
 import Product from "./views/product/Product.vue"  //商品列表
 
 import Personal from "./views/personal/Personal.vue"  //个人中心
+import Login from "./views/personal/Login.vue"  //用户注册
+import Denglu from "./views/personal/Denglu.vue"  //用户登录
 Vue.use(Router)
 //2.为Exam01.vue 配置路径
 
@@ -29,9 +31,8 @@ export default new Router({
        {path:'/basketball'},  //篮球
 
      ]
-  },  
-    
-    {path:'/personal',component:Personal} //个人中心路由
-    
+  },      
+    {path:'/login',component:Login}, //个人注册
+    {path:'/denglu',component:Denglu} //个人注册
   ]
 })

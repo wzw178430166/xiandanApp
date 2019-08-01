@@ -133,7 +133,7 @@
                  <!-- 定时器 -->
                  <p class="com_width97">
                 <span>还剩</span>
-               <span class="jieshuee" id="reverse1" data-time="2019/9/14 23:59">
+               <span class="jieshuee" id="reverse1" data-time="2019/9/2 23:59">
                 <em>00</em> <span class="spandou">天</span>
                 <em>00</em> <span class="spandou">时</span>
                 <em>00</em> <span class="spandou">分</span>
@@ -149,7 +149,7 @@
                 <p class="com_width98">￥259.00<del>￥69.00</del></p>
                   <p class="com_width97">
                 <span>还剩</span>
-               <span class="jieshuee" id="reverse2" data-time="2019/9/14 23:59">
+               <span class="jieshuee" id="reverse2" data-time="2019/10/5 23:59">
                 <em>00</em> <span class="spandou">天</span>
                 <em>00</em> <span class="spandou">时</span>
                 <em>00</em> <span class="spandou">分</span>
@@ -164,7 +164,7 @@
                   <p class="com_width98">￥259.00<del>￥69.00</del></p>
                    <p class="com_width97">
                 <span>还剩</span>
-               <span class="jieshuee" id="reverse3" data-time="2019/9/14 23:59">
+               <span class="jieshuee" id="reverse3" data-time="2019/8/30 23:59">
                 <em>00</em> <span class="spandou">天</span>
                 <em>00</em> <span class="spandou">时</span>
                 <em>00</em> <span class="spandou">分</span>
