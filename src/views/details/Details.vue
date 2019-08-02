@@ -4,7 +4,8 @@
     <carousel :list=pics class="carouset"></carousel>
     <p class="markingts"></p>
     <div class="announcement">
-        <img :src="`${host}img/details/announcement.gif`" alt=""/>
+        <div class="announcement_div"><img :src="`${host}img/details/announcement.gif`" alt="" class="announcement_img"/></div>
+        <p class="announcement_msg">GUESS美国盖尔斯 新款时尚欧美字母印花女士手包小号手拿包手抓包晚宴包化妆包多功能包 白色</p>
     </div>
      <div class="information">
        <div class="int-top">
@@ -57,6 +58,24 @@
           </div> 
         </div>
          <p class="markingts"></p>
+               <mt-tabbar fixed v-model="tabbars">
+                <mt-tab-item id="message" :focused="currentIndex[0].isSelected">
+        
+                    你好
+                </mt-tab-item>
+                 <mt-tab-item id="message1" :focused="currentIndex[1].isSelected">
+                   
+                    你好
+                </mt-tab-item>
+                 <mt-tab-item id="message2" :focused="currentIndex[2].isSelected">
+                   
+                    你好
+                </mt-tab-item>
+                 <mt-tab-item id="message3" :focused="currentIndex[3].isSelected">
+                    
+                    你好
+                </mt-tab-item>
+            </mt-tabbar>
  </div>
 </template>
 <script>
@@ -69,7 +88,14 @@ export default {
           pics:[//轮播图片
                 {sm:'http://127.0.0.1:5050/img/lunbotu/01.jpg'},
                 {sm:'http://127.0.0.1:5050/img/lunbotu/02.jpg'}
-            ],    
+            ], 
+                currentIndex:[
+                {isSelected:true},
+                {isSelected:false},
+                {isSelected:false},
+                {isSelected:false}
+            ],
+             tabbars:"message",   
         }
     },
     methods:{

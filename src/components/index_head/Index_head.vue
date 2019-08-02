@@ -13,7 +13,7 @@
 		<ul class="alert_conter">
             <li><router-link to="/Index"><p></p></router-link></li>
             <li><router-link to="/login"><p></p></router-link></li>
-            <li><router-link to="/Index"><p><b>1</b></p></router-link></li>
+            <li><router-link to="/cart"><p><b>1</b></p></router-link></li>
             <li @click="action=''"><span class="close"></span></li>
         </ul>
 	</div>

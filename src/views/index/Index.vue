@@ -2,7 +2,7 @@
  <div>
     <index_head></index_head>
     <div class="nav_index">
-          <router-link to="#" class="wid">
+          <router-link to="/list" class="wid">
          <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
           <p>商品分类</p>
           </router-link>

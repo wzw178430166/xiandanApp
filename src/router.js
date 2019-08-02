@@ -6,7 +6,7 @@ import children from "./components/test/children.vue"
 import parsent from "./components/test/parsent.vue"
 import Index from "./views/index/Index.vue"  //首页
 import Details from "./views/details/Details.vue"  //详情
-
+import Cart from "./views/cart/Cart.vue"  //购物车
 import Product from "./views/product/Product.vue"  //商品列表
 
 import Personal from "./views/personal/Personal.vue"  //个人中心
@@ -24,6 +24,7 @@ export default new Router({
     {path:'/',redirect:'/Index'},   //首页
     {path:'/Index',component:Index},
     {path:'/details',component:Details},  //详情
+    {path:'/cart',component:Cart}, //购物车
     {path:'/personal',component:Personal},  //个人
 
     {path:'/list',component:Product,    //商品列表 
@@ -32,7 +33,7 @@ export default new Router({
 
      ]
   },      
-    {path:'/login',component:Login}, //个人注册
-    {path:'/denglu',component:Denglu} //个人注册
+    {path:'/login',component:Login}, //用户注册
+    {path:'/denglu',component:Denglu} //用户登录
   ]
 })
