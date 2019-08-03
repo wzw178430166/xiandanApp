@@ -58,24 +58,13 @@
           </div> 
         </div>
          <p class="markingts"></p>
-               <mt-tabbar fixed v-model="tabbars">
-                <mt-tab-item id="message" :focused="currentIndex[0].isSelected">
-        
-                    你好
-                </mt-tab-item>
-                 <mt-tab-item id="message1" :focused="currentIndex[1].isSelected">
-                   
-                    你好
-                </mt-tab-item>
-                 <mt-tab-item id="message2" :focused="currentIndex[2].isSelected">
-                   
-                    你好
-                </mt-tab-item>
-                 <mt-tab-item id="message3" :focused="currentIndex[3].isSelected">
-                    
-                    你好
-                </mt-tab-item>
-            </mt-tabbar>
+          <p class="merchant">归属商家：中国咸蛋网</p>
+           <p class="markingts"></p>
+         <div class="tabarr">
+              <span><router-link to="/Index">首页</router-link></span>
+              <span><router-link to="/cart">购物车</router-link></span>
+              <span><router-link to="#">加入购物车</router-link></span>
+          </div>
  </div>
 </template>
 <script>
@@ -89,13 +78,7 @@ export default {
                 {sm:'http://127.0.0.1:5050/img/lunbotu/01.jpg'},
                 {sm:'http://127.0.0.1:5050/img/lunbotu/02.jpg'}
             ], 
-                currentIndex:[
-                {isSelected:true},
-                {isSelected:false},
-                {isSelected:false},
-                {isSelected:false}
-            ],
-             tabbars:"message",   
+            
         }
     },
     methods:{

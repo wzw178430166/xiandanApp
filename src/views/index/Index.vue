@@ -8,36 +8,36 @@
           </router-link>
        
           <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/aboard.png`" alt=''></div>
+          <p>海外直购</p>
           </router-link>
            <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/shopping_first.png`" alt=''></div>
+          <p>限时抢购</p>
           </router-link>
            <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/group.png`" alt=''></div>
+          <p>团团赚</p>
           </router-link>
         
     </div>
     <div class="nav_index nav-itme">
           <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/tip.png`" alt=''></div>
+          <p>咸蛋公告</p>
           </router-link>
        
           <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/help.png`" alt=''></div>
+          <p>帮助中心</p>
           </router-link>
            <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+         <div class="img_pice"><img :src="`${host}img/index/nav/collection.png`" alt=''></div>
+          <p>我的收藏</p>
           </router-link>
-           <router-link to="#" class="wid">
-         <div class="img_pice"><img :src="`${host}img/index/nav/product_sec.png`" alt=''></div>
-          <p>商品分类</p>
+           <router-link to="/order" class="wid">
+         <div class="img_pice"><img :src="`${host}img/index/nav/order.png`" alt=''></div>
+          <p>我的订单</p>
           </router-link>
     </div>
     <div class="title_msright"><!--2019/8/14 23:59 -->
