@@ -1,5 +1,5 @@
 $font-color:#ED7736;
-.article_nav{width:100%;margin-top: 3.4rem;background-color: #EEEEEE;box-sizing:border-box;
+.article_nav{width:100%;background-color: #EEEEEE;box-sizing:border-box;
     display:flex;
  .article_ul{width:25%;border-left:1px solid #B0B0B0;position: relative;z-index: 2;
   li{width:100%;height: 2.6rem;line-height: 2.6rem;text-align: center;border-right: 1px solid #B0B0B0;border-bottom: 1px solid #B0B0B0;color:#444444;font-size: .8rem;};
@@ -17,4 +17,9 @@ $font-color:#ED7736;
     }
     .span_text{align-self:center;line-height: 1rem;}
   }
+}
+.title_conterv{width:100;height: 2.5rem;line-height: 2.5rem;margin-top: 3.4rem;background-color: #EEEEEE;display:flex;justify-content:space-between;padding: 0 10px 0 10px;overflow: hidden;
+ span:first-child{color:$font-color;}
+ .zhuxiao{color:red;margin-left: 20px;}
+ .denglu{color:#53C834;font-size: 1rem;margin-left: 1rem;}
 }

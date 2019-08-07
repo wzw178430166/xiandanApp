@@ -15,4 +15,4 @@ $host:"http://127.0.0.1:5050/";       使用$host  样式使用scss变量
 
  #需要引入头部组件的，当前组件需要  头部margin-top：2.7rem    搜索index_head 3.4rem
 
-    
+    #-64px -138px;}    -64宽w -138高h

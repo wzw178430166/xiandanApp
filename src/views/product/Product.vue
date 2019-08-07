@@ -1,6 +1,11 @@
 <template>
  <div>
       <index_head></index_head> 
+      <div class="title_conterv">
+        <span>中国咸蛋网</span> 
+        <span v-if="islogin==$store.getters.logging">亲爱的，请<router-link to="/denglu" class="denglu">登录</router-link></span> 
+        <span v-else>欢迎，{{$store.getters.getphone}} <i class="zhuxiao" @click="zhuxiao">注销</i></span> 
+      </div> 
         <div class="article_nav">
            <ul class="article_ul">
              <li v-for="(elem,i) of list" :key="i" @click="fun(i,elem)" :class='i==active?"list_active":""'>{{elem}}</li>
@@ -11,7 +16,7 @@
                 <div class="title_arctle">
                  <h3>手机</h3>
                  <div class="sign_arctle">
-                  <span><router-link to="#">小米</router-link></span>
+                  <span><router-link to="/ordering">小米</router-link></span>
                   <span><router-link to="#">vivo</router-link></span>
                 </div>
                 </div>
@@ -186,10 +191,19 @@ export default {
         return {
           list:['手机','摄影','苹果','电脑','外设','家用电器','家居','汽车用品','办公','箱包','厨用','运动','礼品','玩具','个护清洁','食品','酒饮'],
           active:"小米",
-          content:"小米"
+          content:"小米",
+          uname:"www",
+          islogin:false
         }
     },
     methods:{
+      zhuxiao(){ //注销
+        this.$messagebox.confirm("确定退出登录吗").then(action=>{
+          this.$store.commit('LOGOUT');
+             }).catch(err=>{
+                 console.log(err); //点取消返回的信息  点取消会报错，要用catch()
+             });
+      },
       fun(n,c){
         console.log(123);
         this.active=n;

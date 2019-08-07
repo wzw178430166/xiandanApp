@@ -20,8 +20,8 @@ export default {
 <style>
 .mint-field-core{border:1px solid #999797!important;border-radius: 5px!important;padding: 5px!important;}
 .mint-cell-title{text-align: center!important;}
+.mint-swipe-indicators{left: 80%!important;}
 .marking{width:100%;height: 1rem;background-color: #DFDFDF;}
-.mint-swipe-indicators{left: 90%!important;}
 .mint-swipe-indicator.is-active{background-color:#FF4600!important;}
 .mint-swipe-indicator{background: #CCCCCC!important;opacity: 1!important;}
    .mint-searchbar{background-color:#FF9C26!important;}

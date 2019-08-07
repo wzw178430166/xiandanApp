@@ -3,9 +3,9 @@
         <headstd msg="购物车" class="myhead"></headstd>
         <div class="titele_cart">
            <span class="xiandan">中国咸蛋网</span>
-           <span class="titele_ms" v-if="islogin==false">亲爱的，<router-link to="/denglu" @click.prevent="logins">请先登录</router-link> 
+           <span class="titele_ms" v-if="islogin==$store.getters.logging">亲爱的，<router-link to="/denglu" @click.prevent="logins">请先登录</router-link> 
            </span>
-           <span v-else class="welcomeuy">欢迎：{{uname}},<router-link to="#" @click="zhuxiao">注销</router-link></span>
+           <span v-else class="welcomeuy">欢迎：{{$store.getters.getphone}},<i @click="zhuxiao" class="welcolor">注销</i></i></span>
            <span class="inter" @click="action='in'">{{conter}}</span>
         </div>
         <div class="cart_conter" v-if="shopping.length==0">
@@ -42,6 +42,11 @@
                  </router-link>
              </div>
             </div>
+            <div class="cartsts">
+            <p>商品总金额：<span>¥168.00</span></p>
+            <p>共1件商品</p>
+             <img :src="`${this.host}img/cart/btm_cart.png`" class="cart_imgurl" @click="www"/>
+            </div>
     </div>
 </template>
 
@@ -51,7 +56,7 @@ export default {
     data(){
         //登录的时候判断是否登录， 然后服务器把session用户的编号res.send()回去客户端，客户端把编号存着sessionStorage里面。
         return {
-             host:this.host, //域名
+            host:this.host, //域名
             conter:'[-]',
             action:"",
             cartWidth:8.8,    //一件商品元素的高度与scss样式对应适调
@@ -66,7 +71,13 @@ export default {
     },
     methods:{
          zhuxiao(){   //注销 ief
-                  this.islogin=false
+            this.$messagebox.confirm("确定退出登录吗").then(action=>{
+                this.$store.commit("LOGOUT");
+               this.$router.push("/Index");
+                 // this.islogin=false
+             }).catch(err=>{
+                 console.log(err); //点取消返回的信息  点取消会报错，要用catch()
+             });
               },
         logins(){   //登录
               this.islogin=true;
@@ -75,6 +86,12 @@ export default {
            if(this.conter!='[-]'){
                this.conter='[+]';
            }
+        }
+        ,
+        www(){
+            this.axios.get('details/',{params:{lid:1}}).then(res=>{
+                console.log(res);
+            });
         }
     }
 }

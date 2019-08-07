@@ -1,0 +1,7 @@
+$font-color:#FF9C26;
+$host:"http://127.0.0.1:5050/";
+.person_msg{width:100%;height: 15rem;background-color:$font-color;margin-top:2.7rem;
+  div:first-child{width:67px;height: 65px;margin: 0 auto;background: url($host+'img/details/user150106.png') no-repeat  -137px -138px;position: relative;top:1rem;}
+  div:nth-child(2){width:100%;height: 2rem;line-height: 2rem;text-align: center;margin-top: 1.5rem;color:white;}
+}
+.myritct{width:100%;height: 10rem;border:1px solid red;box-sizing: border-box;}

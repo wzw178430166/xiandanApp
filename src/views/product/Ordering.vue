@@ -10,46 +10,46 @@
         <div class="content_div">
             <div class="pro_box">     
                 <div class="clearfix">
-                <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
-		        <img class="fl" src="https://c4.neweggimages.com.cn/neweggpic2/neg/P80/A0Q-403-09G.jpg?v=94DED4E1B8AD4D31ACA9" alt="Breo 倍轻松 颈椎按摩披肩">
-		        </a>
+                <router-link to="/details?lid=1">
+		        <img class="fl" :src="`${host}img/details/xiaomi/01.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
+                </router-link>
                 </div>
                 <div class="pro_brief">
-               <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
+                    <router-link to="/details?lid=1">
                 <p>Breo 倍轻松 颈椎按摩披肩情人节特价...</p>
 		        <p><span>¥ 139.00</span></p>
 		        <p>库存：有货</p>
-                </a>		        
+            </router-link>		        
 	            </div>
             </div>
 
              <div class="pro_box">     
                 <div class="clearfix">
-                <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
-		        <img class="fl" src="https://c4.neweggimages.com.cn/neweggpic2/neg/P80/A0Q-403-09G.jpg?v=94DED4E1B8AD4D31ACA9" alt="Breo 倍轻松 颈椎按摩披肩">
-		        </a>
+                    <router-link to="/details?lid=1">
+		        <img class="fl" :src="`${host}img/details/xiaomi/01.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
+            </router-link>
                 </div>
                 <div class="pro_brief">
-               <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
+                    <router-link to="/details?lid=1">
                 <p>Breo 倍轻松 颈椎按摩披肩情人节特价...</p>
 		        <p><span>¥ 139.00</span></p>
 		        <p>库存：有货</p>
-                </a>		        
+            </router-link>		        
 	            </div>
             </div>
 
              <div class="pro_box">     
                 <div class="clearfix">
-                <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
-		        <img class="fl" src="https://c4.neweggimages.com.cn/neweggpic2/neg/P80/A0Q-403-09G.jpg?v=94DED4E1B8AD4D31ACA9" alt="Breo 倍轻松 颈椎按摩披肩">
-		        </a>
+                    <router-link to="/details?lid=1">
+		        <img class="fl" :src="`${host}img/details/xiaomi/01.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
+		         </router-link>
                 </div>
                 <div class="pro_brief">
-               <a href="https://m.newegg.cn/Product/A0Q-403-09G.htm">
+                    <router-link to="/details?lid=1">
                 <p>Breo 倍轻松 颈椎按摩披肩情人节特价...</p>
 		        <p><span>¥ 139.00</span></p>
 		        <p>库存：有货</p>
-                </a>		        
+            </router-link>		        
 	            </div>
             </div>
             
@@ -60,7 +60,9 @@
 import Headstd from "../../components/header/Headstd";  //引入头部组件
 export default {
     data(){
-        return {}
+        return {
+            host:this.host
+        }
     },
      components:{
      "headstd":Headstd,

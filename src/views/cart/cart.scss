@@ -12,6 +12,7 @@ $host:"http://127.0.0.1:5050/";
     .inter{margin-right: 10px;color:$color_tempsse;}
     .titele_ms{  a{color:$color_tempsse} }
     .welcomeuy{ a{color: crimson;}}
+    .welcolor{color:crimson;}
 }
  .cart_conter{width:100%;height: 300px;background-color: #FFFFFF;
     .cart_int{width:100%;height: 100px;display: flex;justify-content:center;align-items:center;
@@ -91,4 +92,11 @@ $host:"http://127.0.0.1:5050/";
            font-size: 1em;
            font-weight: bold;padding: 0 5px 0 5px;}
    }
+}
+.cartsts{width:100%;position: fixed;bottom: 0;background: white;padding-left:20px;box-sizing:border-box;border:1px solid #DFDFDF;
+ p:nth-child(1){height: 2.2rem;line-height: 2.2rem;width:100%;
+ span{color:$color_tempsse;}
+}
+ p:nth-child(2){height: 2.2rem;line-height: 2.2rem;width:100%;}
+ .cart_imgurl{width:120px;height: 63px;position: fixed;bottom: 16px;right: 0;}
 }

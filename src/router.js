@@ -25,7 +25,14 @@ export default new Router({
     {path:'/',redirect:'/Index'},   //首页
     {path:'/Index',component:Index},
     {path:'/details',component:Details},  //详情
-    {path:'/cart',component:Cart}, //购物车
+    {
+      path:'/cart',
+      component:Cart,
+      meta: {
+        requireAuth: true, // 添加该字段，表示进入这个路由是需要登录的
+        },
+  
+  }, //购物车
     {path:'/personal',component:Personal},  //个人
     {path:'/list',component:Product}, //商品列表
     {path:'/ordering',component:Ordering,    //用户筛选 

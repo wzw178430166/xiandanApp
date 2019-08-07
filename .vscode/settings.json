@@ -1,0 +1,51 @@
+
+      {
+            "git.ignoreMissingGitWarning": true,
+            "editor.fontSize": 20,
+            "files.autoSave": "afterDelay",
+            "beautify.language": {
+                "js": {
+                    "type": [
+                        "javascript",
+                        "json"
+                    ],
+                    "filename": [
+                        ".jshintrc",
+                        ".jsbeautify"
+                    ]
+                },
+                "css": [
+                    "css",
+                    "scss"
+                ],
+                "html": [
+                    "htm",
+                    "html",
+                    "vue"
+                ]
+            },
+		"editor.tabSize": 6,
+		
+            "emmet.syntaxProfiles": {
+                  "javascript": "javascriptreact",
+                  "vue": "html",
+                  "vue-html": "html",
+                  "typescript": "html"
+            },
+            "files.associations":{
+                  "*.vue":"html",
+                  
+            },
+            "vetur.format.options.tabSize": 4,
+            "vetur.format.options.useTabs": true,
+            "vetur.format.defaultFormatterOptions": {
+                "prettier": {
+                    "semi": false,   
+                    "singleQuote": true 
+                }
+		},
+		"emmet.triggerExpansionOnTab": true,
+		"editor.tabCompletion": "on",
+	
+        }
+            

@@ -12,7 +12,7 @@
          <div class="alert fade" :class="action">
 		<ul class="alert_conter">
             <li><router-link to="/Index"><p></p></router-link></li>
-            <li><router-link to="/login"><p></p></router-link></li>
+            <li><router-link to="/denglu"><p v-if="islogin==$store.getters.logging"></p><p class="not_login" v-else></p></router-link></li>
             <li><router-link to="/cart"><p><b>1</b></p></router-link></li>
             <li @click="action=''"><span class="close"></span></li>
         </ul>
@@ -25,7 +25,8 @@ export default {
     data(){
         return {
             searchs:'',
-            action:""
+            action:"",
+            islogin:true  //登录状态
         }
     },
     methods:{

@@ -214,21 +214,22 @@ function fadeout(ele, opacity, speed) {
                          return arr;
                  }
 
-  //自定义ajax 用原生js写的方法。。调用时候用对象解构。。跟jq功能 $.ajax 一样
-  export function ajax({url,type,data,dataType}){    
+  //自定义ajax 用原生js写的方法。
+  //   // ajax({url:'http://127.0.0.1:5050/details',type:'get',data:'lid=1',dataType:'json'}).then(res=>{console.log(res)})  只支持json格式的数据， 不传data可以，要传dataType  如果后端传回来的不是json数据强行转会报错，就不要加这个参数了
+  export function ajax({url,type,data,dataType}){    //对象解构： 解决不确定参数个数的时候使用，传参传对象
     return new Promise(function(open,err){
         //1. 创建xhr对象
         var xhr=new XMLHttpRequest();
         //2.绑定监听事件
         xhr.onreadystatechange=function(){
-            if(xhr.readyState==4&&xhr.status==200){
-                if(dataType!==undefined
-                    &&dataType.toLowerCase()==="json")
-                    var res=JSON.parse(xhr.responseText)
-                else
+        if(xhr.readyState==4&&xhr.status==200){
+              if(dataType!==undefined&&dataType.toLowerCase()==="json"){
+                        var res=JSON.parse(xhr.responseText)
+                           }
+                else{
                     var res=xhr.responseText
-
-                open(res);
+                }
+                open(res);   //请求到数据，缺一段逻辑，使用回调函数（引出了Promise）
             }
         }
         if(type.toLowerCase()=="get"&&data!=undefined){
@@ -304,3 +305,21 @@ export function dictionaries1(str){
             }
             return array;
          }
+
+         //防止input输入框输入法弹出时，将fixed定位按钮顶起
+         function fixeds(){
+         var winHeight = $(window).height();
+var $bottom = $dom.find('#bottom');
+$(window).on('resize', function(){
+  var thisHeight=$(this).height();
+  if(winHeight - thisHeight >50){
+    //窗口发生改变(大),故此时键盘弹出
+    //当软键盘弹出，在这里面操作
+    $bottom.hide();
+  }else{
+    //窗口发生改变(小),故此时键盘收起
+    //当软键盘收起，在此处操作
+    $bottom.show();
+  }
+});
+}

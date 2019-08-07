@@ -26,10 +26,9 @@
          <div class="img_pice"><img :src="`${host}img/index/nav/tip.png`" alt=''></div>
           <p>咸蛋公告</p>
           </router-link>
-       
-          <router-link to="#" class="wid">
+          <router-link to="/personal" class="wid">
          <div class="img_pice"><img :src="`${host}img/index/nav/help.png`" alt=''></div>
-          <p>帮助中心</p>
+          <p>个人中心</p>
           </router-link>
            <router-link to="#" class="wid">
          <div class="img_pice"><img :src="`${host}img/index/nav/collection.png`" alt=''></div>
@@ -51,7 +50,10 @@
                 <span class="title_router"><a href="#">更多></a></span>
             </div>
              <!-- 首页轮播图  -->
-             <carousel :list=pics></carousel>
+             <!-- <carousel :list=pics></carousel> -->
+             <div class="index_car">
+               <index_cars></index_cars>
+             </div>
                <!-- 结束首页轮播图 -->
              <!-- 闪购.团购开始 -->
                 <div class="title_msright title_two"><!--2019/8/14 23:59 -->
@@ -290,6 +292,7 @@
 <script>
 import index_head from '../../components/index_head/Index_head'
 import Carousel from '../../components/lunbo/Carousel'
+import index_car from './Index_car'
 export default {
     data(){
         return {
@@ -363,7 +366,8 @@ export default {
  //注册轮播子组件
   components:{
     "index_head":index_head,
-    "carousel":Carousel
+    "carousel":Carousel,   //没用
+    "index_cars":index_car,   //轮播组件
   }
 }
 
@@ -371,6 +375,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./index.scss"; //引用外部的scss文件  使用@import 就算样式写在后面也会被覆盖样式
+@import "./index.scss"; /*引用外部的scss文件  使用@import 就算样式写在后面也会被覆盖样式*/
    
 </style>

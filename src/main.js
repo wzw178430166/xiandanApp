@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 //以上三行不要动原来位置，原因：引入要按顺序
 import axios from "./axios"
+import qs from "qs"     //引入qs
+Vue.prototype.qs=qs
 import mystore from "./store"  //引入共享数据仓库
 //第三方组件库在下面引入
 //1.完整引入mint-ui             //按需引入  import{}
@@ -14,6 +16,7 @@ Vue.use(MintUI);
 //4.引入图片字体样式文件（第三方阿里巴巴图库下载）
 import'./font/iconfont.css';
 import'./assets/n.css';
+//import'./assets/commst.scss'; //全局引入mint-ui默认scss
 Vue.config.productionTip = false
 //5: 设置请求的根路径 
 //Vue.http.options.root = "http://127.0.0.1/vue_ser/";
@@ -21,7 +24,20 @@ Vue.config.productionTip = false
 Vue.prototype.host="http://127.0.0.1:5050/"  //域名
 //import Myfooter from './components/footer/Footert'
 //Vue.component("my-footer",Myfooter); //放在App.vue容器里，引用对象，加上标签名
-
+// 这个官方名字叫导航守卫，挺形象的
+router.beforeEach((to, from, next) => {
+  // 如果是去登录或注册，那就先把user移除
+  if (to.path === '/login' || to.path === '/denglu') {
+   sessionStorage.removeItem('user')
+  }
+  let user = JSON.parse(sessionStorage.getItem('user'))
+  if (!user && (to.path === '/manger/my' || to.path === '/manger/send' || to.path === '/manger/history')) {
+   next({ path: '/login' })
+  } else {
+   next()
+  }
+ })
+ 
 new Vue({
   router,
   store:mystore, 
