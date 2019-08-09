@@ -29,7 +29,6 @@ $host:"http://127.0.0.1:5050/";
     color:#922;
     background:#FFFFFF;
     padding:0px;
-    border:1px solid red;
     box-sizing: border-box;
 }
 .fade{ /*定义淡入淡出动画的初始状态,常驻元素*/
@@ -50,10 +49,38 @@ $host:"http://127.0.0.1:5050/";
      /*{'height':'calc:('+cartlength*cartHeight+')rem'}*/
    /* opacity: 1;*/
 }
-  .cart_detaio{width:100%;display:flex;box-sizing:border-box;
-   :nth-child(1){width:10%;height: 8.8rem;background: brown;}
-   :nth-child(2){width:30%;height: 8.8rem;background: blue;}
-   :nth-child(3){width:60%;height: 8.8rem;background: brown;}
+  .cart_detaio{width:100%;display:flex;box-sizing:border-box;align-items:center;
+   div:nth-child(1){width:10%;height: 8.8rem;overflow: hidden;display: flex;justify-content:center;
+    align-items:center;
+    .radiost{width:1.1rem;height: 1.1rem;}
+}
+   div:nth-child(2){width:30%;height: 8.8rem;display:flex;align-items:center;
+   img{width:100%;height: 5.5rem;align-self:center;border:1px solid #666;}
+}
+   div:nth-child(3){width:60%;height: 8.8rem;
+    .div_tit{height:2.5rem;line-height: 2rem;display:flex;width:100%;overflow: hidden;padding-right:5px;padding-top:5px;box-sizing:border-box;
+        a{color: #444444;}
+        p:nth-child(1){padding:0 0 0px 10px;overflow: hidden;width:70%;
+            text-overflow: ellipsis;display:flex;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /*第三行显示 ...*/
+            -webkit-box-orient: vertical;
+            font-size: .8rem;height: 2rem;
+            color: #444444;line-height: 1rem;
+        }
+        span{width:30%;height: 2.5rem;line-height: 2.3rem;text-align: center;background-color: #E85707;color:white;}
+    }
+    .div_tit2{width:100%;height: 2rem;padding:0 0 0px 10px;font-size: .8rem;line-height: 2rem;
+      p{margin-right:2rem;color:#000; }
+    }
+    .div_tit3{color:#444444;font-weight: bolder;padding:0px 0 0px 10px;font-size:.8rem;
+     span{color:#666;font-size: .8rem;}
+     .div_titigm{color: #E85707;font-size: 1.2rem;margin-right: 1rem;}
+    }
+    .div_tit4{width:100%;display: flex;flex-direction:row-reverse;;
+      button{width:7rem;height: 2rem;line-height: 2rem;background: #F1F1F1;color:#E85707;border:0;margin-right:5px;margin-top:5px;font-size:.8rem;}
+    }
+}
 }
 }
 

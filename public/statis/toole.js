@@ -323,3 +323,7 @@ $(window).on('resize', function(){
   }
 });
 }
+
+Date.prototype.toLocaleString = function() { //毫秒转日期 2019/8/14 23:59
+  return this.getFullYear() + "/" + (this.getMonth() + 1) + "/" + this.getDate() + "/ " + this.getHours() + ":" + this.getMinutes() + ":" + this.getSeconds();
+ }

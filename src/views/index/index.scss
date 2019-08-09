@@ -67,3 +67,9 @@ $host:"http://127.0.0.1:5050/";
     .nav_like{font-weight: bolder;color: #4DC92F;font-size: 1.3rem;}
 
     .index_car{width:100%;height: 11rem;}
+
+    image[lazy=loading] {
+        width: 40px;
+        height: 300px;
+        margin: auto;
+      }

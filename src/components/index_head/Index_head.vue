@@ -12,8 +12,8 @@
          <div class="alert fade" :class="action">
 		<ul class="alert_conter">
             <li><router-link to="/Index"><p></p></router-link></li>
-            <li><router-link to="/denglu"><p v-if="islogin==$store.getters.logging"></p><p class="not_login" v-else></p></router-link></li>
-            <li><router-link to="/cart"><p><b>1</b></p></router-link></li>
+            <li><router-link to="/denglu"><p v-if="islogints==$store.getters.logging"></p><p class="not_login" v-else></p></router-link></li>
+            <li><router-link to="/cart"><p><b>{{$store.getters.getCartCount}}</b></p></router-link></li>
             <li @click="action=''"><span class="close"></span></li>
         </ul>
 	</div>
@@ -26,17 +26,27 @@ export default {
         return {
             searchs:'',
             action:"",
-            islogin:true  //登录状态
+            islogints:true,
+            islogin:sessionStorage.getItem("user") ? true :false  //登录状态
         }
     },
     methods:{
       
-    }
+    },
+    created() {
+        /*
+        if(this.islogin){
+            this.$store.commit("LOGIN");
+        }else{
+            this.$store.commit("LOGOUT"); 
+        }
+        */
+    },
 }
 </script>
 
 <style scoped lang="scss">
-@import "./Index_head.scss"; //引用外部的scss文件
+@import "./Index_head.scss"; /*引用外部的scss文件*/
    
 </style>
      

@@ -1,6 +1,6 @@
 @import '../../components/header/headst';
 $host:"http://127.0.0.1:5050/";
-$fontcolor:"#FF9C26";
+$fontcolor:#FF9C26;
 .markingts{width:100%;height: .5rem;background-color: #DFDFDF;}
 .information{width:100%;height: 12rem;margin-top:30px;
  .int-top{width:94%;height: 3.9rem;margin: 0 auto;padding:5px 0 5px 0;
@@ -108,15 +108,15 @@ $fontcolor:"#FF9C26";
     }
 }
 .tabarr{width:100%;height: 3.5rem;line-height: 3.5rem;display:flex;justify-content:space-between;overflow:hidden;align-items:center;position:fixed;bottom:0;text-align: center;border:1px solid #E5E5E5;
-   span{border-right:1px solid #E5E5E5;background:#FFFFFF;
+    .item_ee{position: absolute;top:1rem;left:3.2rem;width:12px;height: 15px;color:white;text-align: center;line-height: 15px;}
+   span{border-right:1px solid #E5E5E5;background:#FFFFFF;position: relative;
    a{color: #888888;display: inline-block;width: 100%;vertical-align:bottom;padding-top:32px;}
 }
-   span:nth-child(1){width:25%;background: #FFFFFF url($host+'img/details/home_btm_icon.png') no-repeat center 20px;background-size: 25px 25px;
+   span.tabarint{width:25%;background: #FFFFFF url($host+'img/details/home_btm_icon.png') no-repeat center 20px;background-size: 25px 25px;
 }
    span:nth-child(2){width:25%;background: #FFFFFF url($host+'img/details/cart_btm_icon.png') no-repeat center 20px;background-size: 25px 25px;}
    span:nth-child(3){width:50%;background-color: #FF9C26;}
-   span:nth-child(3){width:50%;background-color: #FF9C26;
-   a{padding: 0;color: white;font-size: 1rem;}
+   span:nth-child(3){width:50%;background-color: #FF9C26;color: white;font-size: 1rem;
 }
 }
 .merchant{width:94%;height: 2rem;line-height: 2rem;margin: 0 auto;}

@@ -26,7 +26,7 @@
              <div class="pro_box">     
                 <div class="clearfix">
                     <router-link to="/details?lid=1">
-		        <img class="fl" :src="`${host}img/details/xiaomi/01.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
+		        <img class="fl" :src="`${host}img/details/xiaomi/03.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
             </router-link>
                 </div>
                 <div class="pro_brief">
@@ -41,7 +41,7 @@
              <div class="pro_box">     
                 <div class="clearfix">
                     <router-link to="/details?lid=1">
-		        <img class="fl" :src="`${host}img/details/xiaomi/01.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
+		        <img class="fl" :src="`${host}img/details/xiaomi/02.jpg`" alt="Breo 倍轻松 颈椎按摩披肩">
 		         </router-link>
                 </div>
                 <div class="pro_brief">

@@ -30,6 +30,10 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login' || to.path === '/denglu') {
    sessionStorage.removeItem('user')
   }
+  if (to.path === '/details') {
+    sessionStorage.removeItem('model')
+    sessionStorage.removeItem('model2')
+   }
   let user = JSON.parse(sessionStorage.getItem('user'))
   if (!user && (to.path === '/manger/my' || to.path === '/manger/send' || to.path === '/manger/history')) {
    next({ path: '/login' })
@@ -41,5 +45,6 @@ router.beforeEach((to, from, next) => {
 new Vue({
   router,
   store:mystore, 
+
   render: h => h(App)
 }).$mount('#app')

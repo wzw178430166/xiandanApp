@@ -190,8 +190,8 @@ export default {
     data(){
         return {
           list:['手机','摄影','苹果','电脑','外设','家用电器','家居','汽车用品','办公','箱包','厨用','运动','礼品','玩具','个护清洁','食品','酒饮'],
-          active:"小米",
-          content:"小米",
+          active:0,
+          content:"手机",
           uname:"www",
           islogin:false
         }
