@@ -6,9 +6,9 @@
            <span class="titele_ms" v-if="islogin==$store.getters.logging">亲爱的，<router-link to="/denglu" @click.prevent="logins">请先登录</router-link> 
            </span>
            <span v-else class="welcomeuy">欢迎：{{$store.getters.getphone}},<i @click="zhuxiao" class="welcolor">注销</i></i></span>
-           <span class="inter" @click="action='in'">{{conter}}</span>
+           <span class="inter" @click="add" v-text="conter"></span>
         </div>
-        <div class="cart_conter" v-if="shopping.length==0">
+        <div class="cart_conter" v-if="cartlength==0">
             <div class="cart_url"></div>
             <p class="cart_msget">购物车都空啦，快去逛逛吧</p>
             <p class="cart_int">
@@ -16,7 +16,7 @@
             </p>
         </div>
         <div class="carts">
-        <div class="alert fade" :class="action" :style="{'height':'calc('+cartWidth*cartlength+'rem)'}"> 
+        <div class="alert fade" :class="flag?'':'in'" :style="{'height':'calc('+cartWidth*cartlength+'rem)'}"> 
             <!-- 请求回来的商品 遍历 长度给cartlength-->
 	       <div class="cart_detaio" v-for="(elem,i) of shopping" :key="i">
                <div>
@@ -43,6 +43,7 @@
      
 	</div>
     </div>
+                     <sport></sport>
         <!-- 今日推荐 -->
                   <div class="title_msright title_two"><!--2019/8/14 23:59 -->
                 <!-- <span>距结束</span><span class="jieshuee" id="reverse" :data-time="new Date(products.shelf_time).toLocaleString()"> -->
@@ -51,13 +52,37 @@
             </div>
             <div class="nav_content">
              <div class="nav_article">
-                  <router-link to="/details">
+                  <router-link to="/details?lid=1">
                  <img :src="`${host}img/index/content/01.jpg`" alt="">
                  <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
                  <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
-                 <p class="com_width98">￥259.00</p>
+                 <p class="com_width98">￥1259.00</p>
                  </router-link>
              </div>
+             <div class="nav_article">
+                    <router-link to="/details?lid=2">
+                   <img :src="`${host}img/index/content/02.jpg`" alt="">
+                   <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                   <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                   <p class="com_width98">￥457.00</p>
+                   </router-link>
+               </div>
+               <div class="nav_article">
+                    <router-link to="/details?lid=3">
+                   <img :src="`${host}img/index/content/03.jpg`" alt="">
+                   <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                   <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                   <p class="com_width98">￥359.00</p>
+                   </router-link>
+               </div>
+               <div class="nav_article">
+                    <router-link to="/details?lid=4">
+                   <img :src="`${host}img/index/content/04.jpg`" alt="">
+                   <h2 class="h2conm">荣耀V20  8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
+                   <p class="com_width97">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
+                   <p class="com_width98">￥139.00</p>
+                   </router-link>
+               </div>
             </div>
             <div class="cartsts">
             <p>商品总金额：<span v-text="`￥${total}`"></span></p>
@@ -71,24 +96,26 @@
 
 <script>
 import Headstd from "../../components/header/Headstd"
+import Sport from "../../components/sport/Sport"
 export default {
     data(){
         //登录的时候判断是否登录， 然后服务器把session用户的编号res.send()回去客户端，客户端把编号存着sessionStorage里面。
         return {
             host:this.host, //域名
             conter:'[-]',
-            action:"",
             cartWidth:8.8,    //一件商品元素的高度与scss样式对应适调
             cartlength:0,      //默认一件商品元素的个数
             islogin:false,
             uname:"ddingding",   //用户名字
             shopping:[] ,       //购物车
             uid:this.$store.getters.getuid,  //当前登录的用户
-            total:0      //总价
+            total:0,      //总价
+            flag:true
         }
     },
     components:{
-        "headstd":Headstd
+        "headstd":Headstd,
+        "sport":Sport
     },
     methods:{
          zhuxiao(){   //注销 ief
@@ -103,9 +130,12 @@ export default {
         logins(){   //登录
               this.islogin=true;
         },
-        add(conter){
-           if(this.conter!='[-]'){
-               this.conter='[+]';
+        add(){  //点击开关
+           this.flag=!this.flag; 
+           if(this.flag){
+               this.conter='[-]';
+           }else{
+              this.conter='[+]';
            }
         }
         ,
@@ -121,7 +151,7 @@ export default {
                  this.cartlength=res.data.data.length;  //购物车高度
                  sessionStorage.setItem('counts',this.cartlength);
                  var obj=res.data.data;//res.data.data;
-                 console.log(obj.length);
+               //  console.log(obj.length);
                //  console.log(Object.prototype.toString.call(obj)==="[object Aarry]");
                //  console.log({}.toString.call(obj)==="[object Aarry]");
                  for(var i=0,num=0;i<obj.length;i++){

@@ -1,5 +1,5 @@
 $color_font:#E95808;
-.index_car{width:100%;height: 11rem;position: relative;top:0;
+.index_car{width:100%;height: 11rem;position: relative;top:0; touch-action: none!important;
       .detail-container{ height: 11rem; /*图片高度*/width:100%;
             filter:blur(1.2rem); /*模糊滤镜*/
             opacity: .9;   /*透明度*/}

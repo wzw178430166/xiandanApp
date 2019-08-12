@@ -37,6 +37,7 @@ footer, header, hgroup, main, menu, nav, section {
 *[hidden] {
     display: none;
 }
+* { touch-action: pan-y; } ;
 body {
 	line-height: 1;
 }

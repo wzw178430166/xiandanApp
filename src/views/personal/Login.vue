@@ -39,10 +39,10 @@
 		data() {
 			return {
 				host: this.host,
-				phone: "18320000605", //手机号
-				upwd: "w11111111111", //密码
-				bolr: "2019-08-07", //出生
-				sex: '男', //性别
+				phone: "", //手机号
+				upwd: "", //密码
+				bolr: "", //出生
+				sex: '', //性别
 				inputCode: '', //验证码
 				identifyCodes: "1234567890", //请求过来的验证码格式
              	      identifyCode:""   //初始化验证码
@@ -100,7 +100,12 @@
                     this.$toast("用户已存在");
                 }else{
 			  // this.$router.go(-1);
-			  this.$toast("注册成功");
+			  this.$toast({
+                    message:"注册成功",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-xiaolian"
+                    }); 
                     this.$router.push("/denglu");
                 }
             })

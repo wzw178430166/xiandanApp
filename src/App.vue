@@ -1,5 +1,6 @@
 <template>
  <div class="app-container">
+    <div class="conterst" id="conterst" ref="conterst" v-show="btnFlag" @click="backTop"></div>
     <router-view></router-view>
  </div>
 </template>
@@ -8,16 +9,58 @@
 export default {
     data(){
        return {
+         btnFlag:false,
           foots:document.body.clientHeight
        }
     },
+    methods:{
+      tiao(){console.log(1)
+         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+         console.log(scrollTop);
+         scrollTop=0;
+      }
+      ,
+      // 点击图片回到顶部方法，加计时器是为了过渡顺滑
+  backTop () {
+      const that = this
+      let timer = setInterval(() => {
+        let ispeed = Math.floor(-that.scrollTop / 5)
+        document.documentElement.scrollTop = document.body.scrollTop = that.scrollTop + ispeed
+        if (that.scrollTop === 0) {
+          clearInterval(timer)
+        }
+      }, 16)
+  },
+ 
+  // 回到顶部显示隐藏
+  scrollToTop () {
+    const that = this
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+    that.scrollTop = scrollTop
+    if (that.scrollTop > 160) {
+      that.btnFlag = true
+    } else {
+      that.btnFlag = false
+    }
+  }
+
+    },
     mounted:function(){
-      console.log(document.body.clientHeight);
+      window.addEventListener('scroll',this.scrollToTop) 
+    //  console.log(document.body.clientHeight);
     } 
+    ,
+    destroyed () {
+  window.removeEventListener('scroll', this.scrollToTop)
+},
+    watch:{
+   
+    }
 }
 </script>
 
 <style>
+   .conterst{width:40px;height:40px;background:url('img/back_top.png') center center;position: fixed;bottom:130px;border-radius: 50%;right: 1.5rem;}
 .mint-field-core{border:1px solid #999797!important;border-radius: 5px!important;padding: 5px!important;}
 .mint-cell-title{text-align: center!important;}
 .mint-swipe-indicators{left: 80%!important;}

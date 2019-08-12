@@ -21,7 +21,7 @@ $color_weight:#ED8044;
     .clearfix {
         zoom: 1;
         width: 20%;
-        overflow: hidden;
+        overflow: hidden;display:flex;align-items:center;
         .fl{width:80px;height: 60px;}
     }
     .clearfix:after {
@@ -31,8 +31,16 @@ $color_weight:#ED8044;
     }
     .pro_brief {
         width: 80%;
+        .p1{font-size:1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /*第三行显示 ...*/
+            -webkit-box-orient: vertical;
+        }
+        .p3{font-size:.8rem;color:#B0B0B0;}
         a{color:#444;
-            p{margin-bottom: .5rem;}
+        p{margin-bottom: .5rem;padding-left:.8rem;box-sizing:border-box;}
         p:nth-child(2){color:$color_weight;}
         }
     }

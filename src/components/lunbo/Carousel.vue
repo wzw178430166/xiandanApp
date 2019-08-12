@@ -42,7 +42,7 @@ export default {
   top: 0px;
   overflow: hidden;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto; touch-action: none!important;}
    #content .imgs{width:100%;height:162px;}
  .mint-swipe-indicator .is-active{background-color: #C4466C!important;color:#C4466C;}
 .mint-swipe-indicator{background-color: #C4466C!important;}

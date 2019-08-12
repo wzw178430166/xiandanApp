@@ -32,10 +32,10 @@ export default {
     data(){
         return {
              host:this.host,
-             phone:"18320006077",
-            upwd:"w1111111111",
+             phone:"",
+            upwd:"",
             inputCode:'',
-            identifyCodes: "1234567wqw", //请求过来的验证码格式
+            identifyCodes: "1234567890iqw", //请求过来的验证码格式
             identifyCode:""   //初始化验证码
         }
     },
@@ -59,15 +59,30 @@ export default {
             console.log(inputCode);
             console.log(this.identifyCode);
             if(!phonereg.test(phone)){  
-                this.$toast("用户名格式不正确");
+                this.$toast({
+                    message:"用户名格式不正确",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-cry"
+                    }); 
                 return;
             }
             if(!upwdreg.test(upwd)){
-                this.$toast("密码格式不正确");
+                this.$toast({
+                    message:"密码格式不正确",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-cry"
+                    }); 
                 return;
             }
             if(inputCode!=this.identifyCode){
-                this.$toast("验证码不正确");
+                this.$toast({
+                    message:"验证码不正确",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-cry"
+                    }); 
                 return;
             }
             var url = "user/login";
@@ -77,8 +92,19 @@ export default {
             .then(result=>{
                 console.log(result);
                 if(result.data.code<0){
-                    this.$toast("用户名或密码错误");
+                    this.$toast({
+                    message:"用户名或密码错误",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-cry"
+                    }); 
                 }else{
+                    this.$toast({
+                    message:"登录成功",//内容
+                    position:"middle",   //位置
+                    duration:3000,     //时间
+                    iconClass:"iconfont icon-xiaolian"
+                    }); 
                     var user=result.data;
                     //sessionStorage.setItem("phone",phone);  //永久保存用户名
                     sessionStorage.setItem('user', JSON.stringify(user));   //登录了把用户信息存在sessionStorage里面

@@ -12,7 +12,7 @@ export default {
      //  var aae=dictionaries1('hellow World');
       // var arr=[1,3,1,5,1,5]
       // dictionaries2(arr); 
-      console.log( bubbling([1,3,1,5,1,5]));
+      //console.log( bubbling([1,3,1,5,1,5]));
     }
 
 }

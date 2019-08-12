@@ -17,28 +17,28 @@
                  <h3>手机</h3>
                  <div class="sign_arctle">
                   <span><router-link to="/ordering">小米</router-link></span>
-                  <span><router-link to="#">vivo</router-link></span>
+                  <span><router-link to="/ordering">vivo</router-link></span>
                 </div>
                 </div>
                 <div class="title_arctle">
                  <h3>手机配件</h3>
                  <div class="sign_arctle">
-                  <span><router-link to="#">移动电源</router-link></span>
-                  <span><router-link to="#">蓝牙耳机</router-link></span>
-                   <span class="span_text"><router-link to="#">手机通用配件</router-link></span>
-                  <span class="span_text"><router-link to="#">手机数据线</router-link></span>
-                  <span class="span_text"><router-link to="#">手机镜头/拍摄器材</router-link></span>
+                  <span><router-link to="/ordering">移动电源</router-link></span>
+                  <span><router-link to="/ordering">蓝牙耳机</router-link></span>
+                   <span class="span_text"><router-link to="/ordering">手机通用配件</router-link></span>
+                  <span class="span_text"><router-link to="/ordering">手机数据线</router-link></span>
+                  <span class="span_text"><router-link to="/ordering">手机镜头/拍摄器材</router-link></span>
                 </div>
                 </div>
                     <div class="title_arctle">
                  <h3>智能硬件</h3>
                  <div class="sign_arctle">
-                  <span class="span_text"><router-link to="#">智能穿戴/设备</router-link></span>
-                  <span class="span_text"><router-link to="#">无人机</router-link></span>
-                   <span><router-link to="#">平衡车</router-link></span>
-                  <span><router-link to="#">游戏机</router-link></span>
-                    <span><router-link to="#">游戏周边</router-link></span>
-                  <span><router-link to="#">游戏手柄</router-link></span>
+                  <span class="span_text"><router-link to="/ordering">智能穿戴/设备</router-link></span>
+                  <span class="span_text"><router-link to="/ordering">无人机</router-link></span>
+                   <span><router-link to="/ordering">平衡车</router-link></span>
+                  <span><router-link to="/ordering">游戏机</router-link></span>
+                    <span><router-link to="/ordering">游戏周边</router-link></span>
+                  <span><router-link to="/ordering">游戏手柄</router-link></span>
                 </div>
                 </div>
                </mt-tab-container-item>
@@ -46,22 +46,22 @@
                 <div class="title_arctle">
                  <h3>数码摄影</h3>
                  <div class="sign_arctle">
-                  <span><router-link to="#">单电/微单</router-link></span>
-                  <span><router-link to="#">镜头</router-link></span>
-                   <span><router-link to="#">数码相机</router-link></span>
-                  <span><router-link to="#">数码摄像机</router-link></span>
-                  <span><router-link to="#">特殊相机</router-link></span>
-                   <span><router-link to="#">照片打印机</router-link></span>
+                  <span><router-link to="/ordering">单电/微单</router-link></span>
+                  <span><router-link to="/ordering">镜头</router-link></span>
+                   <span><router-link to="/ordering">数码相机</router-link></span>
+                  <span><router-link to="/ordering">数码摄像机</router-link></span>
+                  <span><router-link to="/ordering">特殊相机</router-link></span>
+                   <span><router-link to="/ordering">照片打印机</router-link></span>
                 </div>
                 </div>
                  <div class="title_arctle">
                  <h3>数码附件</h3>
                  <div class="sign_arctle">
-                  <span class="span_text"><router-link to="#">镜头滤镜</router-link></span>
+                  <span class="span_text"><router-link to="/ordering">镜头滤镜</router-link></span>
                   <span><router-link to="#">数码贴膜/清洁</router-link></span>
-                   <span class="span_text"><router-link to="#">数码包</router-link></span>
-                  <span><router-link to="#">三脚架/云台</router-link></span>
-                  <span><router-link to="#">存储卡</router-link></span>
+                   <span class="span_text"><router-link to="/ordering">数码包</router-link></span>
+                  <span><router-link to="/ordering">三脚架/云台</router-link></span>
+                  <span><router-link to="/ordering">存储卡</router-link></span>
                 </div>
                 </div>
                </mt-tab-container-item>
@@ -69,7 +69,7 @@
                   <div class="title_arctle">
                  <h3>苹果专区</h3>
                  <div class="sign_arctle">
-                  <span><router-link to="#">iPhone</router-link></span>
+                  <span><router-link to="/ordering">iPhone</router-link></span>
                   <span><router-link to="#">iPad</router-link></span>
                    <span><router-link to="#">iMac</router-link></span>
                   <span><router-link to="#">MacBook</router-link></span>

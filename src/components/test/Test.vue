@@ -17,24 +17,54 @@ export default {
     methods:{
           getdetailsOne:function(){
             return new Promise(function(open,err){         
-              ajax({url:'http://127.0.0.1:5050/details',type:'get',dataType:'json',data:'lid=1'})
+              ajax({url:'http://wwwhui.applinzi.com/details',type:'get',dataType:'json',data:'lid=1'})
           })
      .then(res=>{
          setTimeout(function(){console.log(res)},3000) 
     })
           },
+     fun:function(){
+      return new Promise(function(res,err){
+         setTimeout(()=>{
+           console.log('第一个定时器');
+           res();
+         })
+       },1000);
+     },
+     fun1:function(){
+       return new Promise(function(res,err){
+           setTimeout(()=>{
+             console.log('第二个定时器');
+             res();
+           },3000)
+       })
+     },
+     fun2:function(){
+       return new Promise(function(res,err){
+         setTimeout(()=>{
+           console.log('第三个定时器');
+           res()
+         },4000)
+       })
+     },
+     goin:function(){
+       this.fun().then(this.fun1().then(this.fun2()))
+     }
+
+
     },
     created(){
+      this.goin();
      //  var aae=dictionaries1('hellow World');
       // var arr=[1,3,1,5,1,5]
       // dictionaries2(arr); 
    
      // console.log( bubbling([1,3,1,5,1,5]));
-       // ajax({url:'http://127.0.0.1:5050/details',type:'get',data:'lid=1',dataType:'json'}).then(res=>{console.log(res)})
+       // ajax({url:'http://wwwhui.applinzi.com/details',type:'get',data:'lid=1',dataType:'json'}).then(res=>{console.log(res)})
    
-    ajax({url:'http://127.0.0.1:5050/details/add',type:'get'}).then(res=>{alert(res)})
+   // ajax({url:'http://wwwhui.applinzi.com/details/add',type:'get'}).then(res=>{alert(res)})
 
-    ajax({url:'http://127.0.0.1:5050/details',type:'get'}).then(res=>{console.log(res)})
+   // ajax({url:'http://wwwhui.applinzi.com/details',type:'get'}).then(res=>{console.log(res)})
     }
 
 }

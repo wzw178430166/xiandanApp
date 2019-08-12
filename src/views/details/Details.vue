@@ -101,16 +101,17 @@ export default {
           var jia=1;
               if(tar.nodeName==="SPAN"){
                 if(this.nums<=1){
-                    this.$toast('最少一件商品')
-                    this.$refs.span1.style.background="#0000";  
+                   // this.$toast('最少一件商品')
+                    //this.$refs.span1.style.background="#0000";  
                   //  console.log(this.$refs.span1);
                     zheng=0;
                   }else{
                       zheng=-1;
-                      this.$refs.span1.style.background='#ededed';
+                     // this.$refs.span1.style.background='#ededed';
                   }  
                   this.nums+=tar.innerHTML=="-"?zheng:jia;
               }
+              //if(this.nums<1){  this.$toast('最少一件商品')}
       },
         changVe(n,item){   //改变速度类型样式    //可以发请求同一件商品的另外一个颜色的商品
            // console.log(item);
@@ -193,7 +194,7 @@ export default {
                     position:"middle",   //位置
                     duration:3000,     //时间
                    // className:"mytoast",//添加样式
-                  //  iconClass:"iconfont icon-food-cake"
+                    iconClass:"iconfont icon-jiaruchenggong"
                     });
                 this.$store.commit("increment");
             }else{
@@ -201,8 +202,8 @@ export default {
                     message:"请先登录",//内容
                     position:"middle",   //位置
                     duration:3000,     //时间
-                   // className:"mytoast",//添加样式
-                  //  iconClass:"iconfont icon-food-cake"
+                    className:"mydenglu",//添加样式
+                    iconClass:"iconfont icon-denglu"
                     }); 
             }
        }).catch(err=>{console.log(err);
@@ -213,8 +214,8 @@ export default {
                     message:"请先选择规格",//内容
                     position:"middle",   //位置
                     duration:3000,     //时间
-                    className:"mytoast",//添加样式
-                  //  iconClass:"iconfont icon-food-cake"
+                 //   className:"mytoast",//添加样式
+                    iconClass:"iconfont icon-guige"
                     });
        
                }
