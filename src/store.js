@@ -20,7 +20,7 @@ var mystore = new Vuex.Store({
   // 这里不能写箭头函数???
   // 登录
   LOGIN (state) {
-    // 先让登录状态变为登录了
+    // 先让登录状态变为登录了 
     state.islogin = true
     // 然后去sessionStorage取用户数据
     let user = JSON.parse(sessionStorage.getItem('user'))

@@ -169,7 +169,6 @@ export default {
        },
        //发送请求加入购物车
        adds(){    //保存尺寸在客户端方便取出来     //加入购物车
-        console.log(22222);
            if(this.flag){
                this.flag=false;
                  setTimeout(()=>{  this.flag=true; },2000)   //防止频繁加入购物车
@@ -187,7 +186,7 @@ export default {
          if(model!=undefined||model2!=undefined||this.velocity[0]===null||this.sizes[0]===null){
              //加入购物车
        this.axios.get('shopping/add',{params:{'id':id,'lid':lid,'model':model,'model2':model2,'price':price,'details_img':details_img,'title':subtitle,'numcart':this.nums,'model_title1':model_title1,'model_title2':model_title2,'details':this.details}}).then(res=>{
-           console.log(res)
+          // console.log(res)
              if(res.data.code>0&&this.$store.getters.logging){  //res.data.code>0&&
                 this.$toast({
                     message:"加入购物车成功",//内容
@@ -214,7 +213,7 @@ export default {
                     message:"请先选择规格",//内容
                     position:"middle",   //位置
                     duration:3000,     //时间
-                 //   className:"mytoast",//添加样式
+                    className:"specificationtt",//添加样式
                     iconClass:"iconfont icon-guige"
                     });
        

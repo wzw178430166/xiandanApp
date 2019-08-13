@@ -2,10 +2,10 @@
   <div>
     <headstd msg="小米"></headstd>
     <ul class="arrange">
-      <li>
+      <li @click="paixu">
         <router-link to="#">价格<i id="arrange_up"></i></router-link>
       </li>
-      <li>
+      <li @click="paixuxiao">
         <router-link to="#">价格<i class="arrange_down"></i></router-link>
       </li>
       <li>
@@ -39,6 +39,7 @@
 </template>
 <script>
   import Headstd from "../../components/header/Headstd";  //引入头部组件
+  import { getClientHeight, getScrollTop } from '../../../public/statis/toole'
   export default {
     data() {
       return {
@@ -54,18 +55,32 @@
         startYy: 0,
         aa: 0,
         startPos: {},
-        endPos: {}
+        endPos: {},
+        timer: '',
       }
     },
     components: {
       "headstd": Headstd,
     },
     methods: {
+      paixu() {
+        var url = "product/paixu"; 
+        this.axios.get(url).then(res => {
+          this.list=res.data
+        })
+      },
+      paixuxiao() {   //小到大价格
+        var url = "product/paixuxiao"; 
+        this.axios.get(url).then(res => {
+          this.list=res.data
+        })
+      },
       //获取商品列表数据
       /*
       getproduct(){
-    var url='product/add';
+    var url='product/paixu';
    this.axios.get(url).then(res=>{  
+     console.log(res);
    })
   },
   */
@@ -85,32 +100,31 @@
       },
 
       move(e) {
-        //这个 touchMove，只要页面在动都会发生的，所以 touching就起作用了
-        // 如果 touching为false，说明这个正在移动的页面不是我们想要的下拉刷新，有可能是用户随意拉了一下页面而已，或者其他
-        // if (!this.touching) return
-        // 获取移动的距离
-        // let diff = e.targetTouches[0].pageY - this.endY
-        // console.log(this.aa)
-        //判断是向上拉还是向下拉 
-        // this.loaddibu()
-        // 　　　　　　if(diff >600) { 
-        // 　　　　　　　　e.preventDefault()
-        //            this.loadMore().then(()=>{
-        //        // this.loadMore2();
-        //       })
-        // 　　　　　　} else {
-        // 　　　　　　　　return 　　
-        // 　　　　　　}
+        //  这个 touchMove，只要页面在动都会发生的，所以 touching就起作用了
+        //  如果 touching为false，说明这个正在移动的页面不是我们想要的下拉刷新，有可能是用户随意拉了一下页面而已，或者其他
+        if (!this.touching) return
+        //  获取移动的距离
+        let diff = e.targetTouches[0].pageY - this.endY
+        console.log(this.aa)
+        //  判断是向上拉还是向下拉 
+        //   this.loadMore()
+        if (diff > 600) {
+          e.preventDefault()
+          this.loadMore().then(() => {
+          })
+        } else {
+          return
+        }
         //这个this.top要对应绑定到该元素的transform: translateY(+top+ 'px')上，不然是无法拉动的
         // 因此这里还要对偏移高度做一下处理，直接设置diff +(this.state === 2 ? 40 : 0) 太快了，因为拉取幅度太大
-        // 让diff*0.25这样子就差不多了
-        // this.top = Math.floor(diff * 0.25) + (this.state === 2 ? 40 : 0)
-        // if (this.top >= 50) {
-        //   this.state = 1;   //代表正在拉取
-        //   // this.top=20;
-        // } else {
-        //   this.state = 0  // 代表初始转态
-        // }
+        //  让diff*0.25这样子就差不多了
+        this.top = Math.floor(diff * 0.25) + (this.state === 2 ? 40 : 0)
+        if (this.top >= 50) {
+          this.state = 1;   //代表正在拉取
+          // this.top=20;
+        } else {
+          this.state = 0  // 代表初始转态
+        }
       },
 
       end(e) {
@@ -120,7 +134,7 @@
         // this.endY=e.targetTouches[0].pageY;
 
         this.aa = this.endY - this.startYy;
-        console.log(e.targetTouches[0])
+        // console.log(e.targetTouches[0])
         // console.log(touch.pageY)
         if (this.state === 2) {
           this.top = 40
@@ -151,67 +165,57 @@
               */
       loadMore() {  //加载更多的数据
         //this.pno;
-         return new Promise((open, err) => {
-        this.pno++;
-      //  console.log(this.pno);
-        var obj = { pno: this.pno, pageSize: this.ps };
-        //5.发送ajax 请求
-        var url = "product/paging";   //传参
-        // var obj={uname:u,upwd:p};//uname跟数据库一样
-        this.axios.get(url, { params: obj }).then(result => {  //get(url,{params:obj}) 发送请求，请求带参数（params.对象）
-          //双向绑定  数据覆盖
-          // console.log(result.data.data);
-          // this.list=result.data.data;
-          var rows = this.list.concat(result.data.data); //当前第一页跟第一页合拼数组，再次点击加1，第一页跟第二页合并。。。。。然后添加到页面
-          this.list = rows;
-           open();
-          //  console.log(1);       
-         // console.log(result.data.data);
-        })
-         });
+        return new Promise((open, err) => {
+          this.pno++;
+          //  console.log(this.pno);
+          var obj = { pno: this.pno, pageSize: this.ps };
+          //5.发送ajax 请求
+          var url = "product/paging";   //传参
+          // var obj={uname:u,upwd:p};//uname跟数据库一样
+          this.axios.get(url, { params: obj }).then(result => {  //get(url,{params:obj}) 发送请求，请求带参数（params.对象）
+            //双向绑定  数据覆盖
+            // console.log(result.data.data);
+            // this.list=result.data.data;
+            var rows = this.list.concat(result.data.data); //当前第一页跟第一页合拼数组，再次点击加1，第一页跟第二页合并。。。。。然后添加到页面
+            this.list = rows;
+            open();
+            //  console.log(1);       
+            //console.log(result.data.data);
+          })
+        });
       },
-      /*
-      loadMore2(){  //加载更多的数据
-       return new Promise((open,err)=>{ 
-      //this.pno++;
-      //this.pno1;
-      var obj={pno:this.pno1,pageSize:this.ps};
-            //5.发送ajax 请求
-     var url ="product/paging";   //传参
-    // var obj={uname:u,upwd:p};//uname跟数据库一样
-     this.axios.get(url,{params:obj}).then(result=>{  //get(url,{params:obj}) 发送请求，请求带参数（params.对象）
-     //双向绑定  数据覆盖
-      // console.log(result.data.data);
-     // this.list=result.data.data;
-       var rows=this.list.concat(result.data.data); //当前第一页跟第一页合拼数组，再次点击加1，第一页跟第二页合并。。。。。然后添加到页面
-         this.list=rows;
-         open();
-         console.log(result);
-       //  console.log(2);
-      }) 
-   }) 
-      }
-      */
       loaddibu() {
-        var loadBottom = document.documentElement.scrollTop + document.documentElement.clientHeight == document.documentElement.scrollHeight;
-        //console.log(loadBottom)
-        if (loadBottom) {
-          this.loadMore()
+        if (this.timer !== undefined) {
+          clearTimeout(this.timer);
+        }
+        //  当200ms内，未发生滚动时，才发送正式的ajax请求
+        var clientHeight = getClientHeight();  //设备高度
+        var scrollTop = getScrollTop();  //body的高度  滚动条距离顶部，body溢出的部分
+        // console.log(scrollTop,clientHeight);
+        var scrollHeight = document.documentElement.scrollHeight - 200; //页面正文全文高
+        var loadBottom = scrollTop + clientHeight > scrollHeight;  //取三个值 元素滚动条距离顶部的高度+页面的高度==元素的高度
+        //移动端有兼容问题
+        if (loadBottom) {           //满足条件 就执行一条请求，清除滚动条，因为会一直触发多次所有要用节流
+          //  再重新开始下一轮等待
+          this.loadMore();
+          window.onscroll = null;
+          this.timer = setTimeout(() => {      //节流   防止重复触发 一开始判断清除定时器
+            window.onscroll = this.loaddibu;
+          }, 200);
         }
       }
     },
     created: function () {
       //  this.getproduct()   //获取商品列表数据
       this.loadMore().then(() => {
-        // this.loadMore2();
       })
     },
     mounted() {
-      window.addEventListener('touchstart', this.start, { passive: false });
-      window.addEventListener('touchmove', this.move);
-      window.addEventListener('touchend', this.end);
+      // window.addEventListener('touchstart', this.start, { passive: false });
+      // window.addEventListener('touchmove', this.move);
+      //  window.addEventListener('touchend', this.end);
       // console.log(document.documentElement)
-      window.addEventListener("scroll", this.loaddibu)
+      window.onscroll = this.loaddibu;
       //   window.addEventListener('scroll', () => {
       //       console.log(window.scrollTop);
       // })

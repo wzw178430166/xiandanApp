@@ -272,7 +272,7 @@ export function dictionaries1(str){
       console.log(max,count);
   }
 
-    //使用字典，不允许出现重复下标  去重 请求返回的数组去重 
+    //使用字典，不允许出现重复下标  数组去重 请求返回的数组去重 
     //原理：对象中(字典中)出现相同的属性和值就会覆盖，只出现一次
 
    export function dictionaries2(arr){
@@ -327,3 +327,105 @@ $(window).on('resize', function(){
 Date.prototype.toLocaleString = function() { //毫秒转日期 2019/8/14 23:59
   return this.getFullYear() + "/" + (this.getMonth() + 1) + "/" + this.getDate() + "/ " + this.getHours() + ":" + this.getMinutes() + ":" + this.getSeconds();
  }
+
+ export function getClientHeight() {   //浏览器视口的高度 设备高度
+  var clientHeight = 0;
+  if (document.body.clientHeight && document.documentElement.clientHeight) {
+    var clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+  } else {
+    var clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+  }
+  return clientHeight;
+}
+
+export function getScrollTop() {  // 浏览器垂直滚动位置  滚动条距离顶部，body溢出的部分
+  var scrollTop = 0;
+  if (document.documentElement && document.documentElement.scrollTop) {
+    scrollTop = document.documentElement.scrollTop;
+  } else if (document.body) {
+    scrollTop = document.body.scrollTop;
+  }
+  return scrollTop;
+}
+
+ //封装Promise方法请求 //多个请求造成回调地狱 所有使用这个封装的方法
+
+          /*  getCount(type){ //type是请求中的prams传过去的值。
+                 return new Promise( //中没有return，只能靠开门解决之前的open
+                     function(resolve,reject){
+                      
+                          this.axios.get(
+                     "/product_list",{
+                         params:{type} //本来的c参数换成函数的参数type,一样参数和属性的就写一个就可以了
+                     }
+                 ).then(res=>{
+                     resolve(res.data.count); //总数累加
+                     //开门（传参） 在下面的 count接着总数累加
+              //Promise中没有return 使用resolve抛出
+                    // total+=res.data.count;
+                 });
+                     }
+                 )
+             },
+              
+               //三个请求并行，但等所有请求都执行完，才汇总总数  执行部分
+   Promise.all([  //这个效率最高，并行用这个，一起执行不会等
+    getCount("a"), //return getCount("a")的new Promised（）对象
+    getCount("b"),
+    getCount("c")
+])
+.then(result=>{ //会在所有new Promise请求完之后执行
+   //把 每个new promise的返回结果都放在result数组中。
+ total= result.reduce((prev,elem)=>prev+elem); //总和
+ console.log(total);
+}
+)
+           //微信小程序 支持es7 
+       (async function(){
+           var result= await Promise.all([
+           getCount("a"), 
+           getCount("b"),
+           getCount("c")
+           ]);
+           total= result.reduce((prev,elem)=>prev+elem); //总和
+       console.log(total);
+       })
+         
+             */
+
+             /*
+               //防抖：  只要不是最后一次触发，就不执行异步请求 可以配合绑定scroll和清空事件使用 window.onscroll=null
+       var timer; //undefined
+       window.onscroll=function(){
+           //如果当前timer不是空，说明前面有一个等待的请求，还未发送。就停止前面的等待
+           if(timer!==undefined){
+               clearTimeout(timer);
+           }
+           //再重新开始下一轮等待
+           timer=setTimeout(function(){
+               //当200ms内，未发生滚动时，才发送正式的ajax请求
+               console.log("发送ajax请求，加载更多数据...");
+           },200);
+       }
+       */
+
+       /*
+         节流：
+             <!--第一次发送请求后，只要响应没回来，就不能发送下一个请求-->
+     <button id="btn">加载更多</button>
+       <script>
+ //节流：第一次发送请求后，只要响应没回来，就不能发送下一个请求
+   // 点击按钮连续发送，可以这样做
+   var canClick=true; //开关变量
+  
+   btn.onclick=function(){
+    if(canClick){ //可以单击
+        canClick=false; //先关不开关
+       console.log("发送ajax请求，加载跟多");
+       setTimeout(function(){
+           console.log('加载完成'); //第一次请求完成了
+           canClick=true;  //请求的函数结尾，重新打开开关，允许下次点击
+       },3000) //比如这个请求3秒后回来，这是假设的，可以更改
+   }
+   }
+        */ 

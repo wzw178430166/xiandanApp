@@ -19,7 +19,7 @@ import'./assets/n.css';
 //import'./assets/commst.scss'; //全局引入mint-ui默认scss
 Vue.config.productionTip = false
 //5: 设置请求的根路径 
-//Vue.http.options.root = "http://127.0.0.1/vue_ser/";
+//Vue.http.options.root = "http://huiwww.applinzi.com/vue_ser/";
 //6:全局设置post 时候表音的数据组织格式为 application/x-www-form-urlencoded
 Vue.prototype.host="http://127.0.0.1:5050/"  //域名
 //import Myfooter from './components/footer/Footert'
