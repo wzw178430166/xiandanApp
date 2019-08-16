@@ -22,7 +22,8 @@
      </div>     
        <p class="markingts"></p>
        <div class="particulars">
-          <p><router-link to="#">商品详情<span>></span></router-link></p>
+       <router-link :to="`/mydelist?lid=${lid}`">
+          <p><router-link :to="`/mydelist?lid=${lid}`">商品详情<span>></span></router-link></p></router-link>
          <p><router-link to="#">商品评论<span>></span></router-link></p>
       </div>
         <p class="markingts"></p>

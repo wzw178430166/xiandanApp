@@ -215,7 +215,7 @@ function fadeout(ele, opacity, speed) {
                  }
 
   //自定义ajax 用原生js写的方法。
-  //   // ajax({url:'http://127.0.0.1:5050/details',type:'get',data:'lid=1',dataType:'json'}).then(res=>{console.log(res)})  只支持json格式的数据， 不传data可以，要传dataType  如果后端传回来的不是json数据强行转会报错，就不要加这个参数了
+  //   // ajax({url:'',type:'get',data:'lid=1',dataType:'json'}).then(res=>{console.log(res)})  只支持json格式的数据， 不传data可以，要传dataType  如果后端传回来的不是json数据强行转会报错，就不要加这个参数了
   export function ajax({url,type,data,dataType}){    //对象解构： 解决不确定参数个数的时候使用，传参传对象
     return new Promise(function(open,err){
         //1. 创建xhr对象

@@ -12,7 +12,8 @@ import Ordering from "./views/product/Ordering.vue"  //商品列表
 import Personal from "./views/personal/Personal.vue"  //个人中心
 import Login from "./views/personal/Login.vue"  //用户注册
 import Denglu from "./views/personal/Denglu.vue"  //用户登录
-import Order from "./views/personal/Order.vue"  //用户登录
+import Order from "./views/personal/Order.vue"  //订单列表
+import Mydelist from "./views/details/Mydelist.vue"  //产品明细
 Vue.use(Router)
 //2.为Exam01.vue 配置路径
 
@@ -41,6 +42,7 @@ export default new Router({
 
      ]
   },  
+     {path:'/mydelist',component:Mydelist},
     {path:'/order',component:Order},     // 订单
     {path:'/login',component:Login}, //用户注册
     {path:'/denglu',component:Denglu} //用户登录

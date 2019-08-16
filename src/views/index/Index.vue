@@ -42,7 +42,7 @@
     <div class="title_msright">
       <!--2019/8/14 23:59 -->
       <!-- <span>距结束</span><span class="jieshuee" id="reverse" :data-time="new Date(products.shelf_time).toLocaleString()"> -->
-      <span class="nav_today">今日咸鸭蛋</span><span class="jieshuee" id="reverse" data-time="2019/8/14 23:59">
+      <span class="nav_today">今日咸鸭蛋</span><span class="jieshuee" id="reverse" data-time="2019/9/14 23:59">
         <em style="display:none">00</em> <span class="spandou" style="display:none">:</span>
         <em class="spannode">00</em> <span class="spandou">:</span>
         <em>00</em> <span class="spandou">:</span>

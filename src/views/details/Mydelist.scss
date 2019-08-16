@@ -1,0 +1,44 @@
+$host:"http://127.0.0.1:5050/";
+.conternt{
+.nav_list{width:95%;height:2rem;line-height:2rem;margin:0 auto;margin-top:2.7rem;
+  ul{  
+        li{float:left;width:33.3%;height:2.5rem;line-height:2.5rem;font-size:1.3rem;text-align:center;
+   border:1px solid #B0B0B0;box-sizing:border-box;border-top:0;border-bottom:5px solid #666;
+  }
+  li+li{border-left:0;}
+  .list_active{border-bottom:5px solid red;}
+  }
+}
+.content_msg{width:95%;margin:0 auto;color:#000;margin-top:1rem;
+.con_title{padding-top:2rem;text-align:center;font-size:1.5rem;color:#000;font-weight:700;}
+.msgimg{width:100%;margin:0 auto;text-align:center;}
+}
+
+}
+.tabarr{width:100%;height: 3.5rem;line-height: 3.5rem;display:flex;justify-content:space-between;overflow:hidden;align-items:center;position:fixed;bottom:0;text-align: center;border:1px solid #E5E5E5;
+  .item_ee{position: absolute;top:1rem;left:3.2rem;width:12px;height: 15px;color:white;text-align: center;line-height: 15px;}
+ span{border-right:1px solid #E5E5E5;background:#FFFFFF;position: relative;
+ a{color: #888888;display: inline-block;width: 100%;vertical-align:bottom;padding-top:32px;}
+}
+ span.tabarint{width:25%;background: #FFFFFF url($host+'img/details/home_btm_icon.png') no-repeat center 20px;background-size: 25px 25px;
+}
+ span:nth-child(2){width:25%;background: #FFFFFF url($host+'img/details/cart_btm_icon.png') no-repeat center 20px;background-size: 25px 25px;}
+ span:nth-child(3){width:50%;background-color: #FF9C26;}
+ span:nth-child(3){width:50%;background-color: #FF9C26;color: white;font-size: 1rem;
+}
+}
+.pro_ser th.title {
+  font-size: 1em;
+  padding: 4px 10px;
+  background: #EDEDED;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  text-align: left;
+}
+.canshu{width:100%;
+ .cantab{width:100%;
+ th{border:1px solid #DEDEDE;padding:10px 20px 10px 0;text-align: right;color: #B0B0B0;}
+ td{border:1px solid #DEDEDE;padding:10px 0 10px 20px;text-align: left;}
+ .titeletab{background: #EEE;text-align: left!important;padding-left:20px;}
+}
+}

@@ -19,9 +19,19 @@ import'./assets/n.css';
 //import'./assets/commst.scss'; //全局引入mint-ui默认scss
 Vue.config.productionTip = false
 //5: 设置请求的根路径 
-//Vue.http.options.root = "http://huiwww.applinzi.com/vue_ser/";
+//Vue.http.options.root = "http://127.0.0.1:5050/vue_ser/";
 //6:全局设置post 时候表音的数据组织格式为 application/x-www-form-urlencoded
 Vue.prototype.host="http://127.0.0.1:5050/"  //域名
+   // 定义全局过滤器（任意组件都可以使用）
+Vue.filter('sexFilter', function (oldVal, formatStr) {  //通过后台传回来的值可以一层一层过滤
+     if(oldVal==1){
+      return oldVal="男";
+     }else if(oldVal==0){
+      return oldVal="女";
+     }else{
+      return oldVal="男女通用";
+     }   
+});
 //import Myfooter from './components/footer/Footert'
 //Vue.component("my-footer",Myfooter); //放在App.vue容器里，引用对象，加上标签名
 // 这个官方名字叫导航守卫，挺形象的

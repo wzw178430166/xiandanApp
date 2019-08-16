@@ -65,7 +65,7 @@ export default {
     font-size:15px!important;
     border:1px solid #333!important;
 }
-   .conterst{width:40px;height:40px;background:url('img/back_top.png') center center;position: fixed;bottom:130px;border-radius: 50%;right: 1.5rem;}
+   .conterst{width:40px;height:40px;background:url('img/back_top.png') center center;position: fixed;bottom:130px;border-radius: 50%;right: 1.5rem;z-index: 999;}
 .mint-field-core{border:1px solid #999797!important;border-radius: 5px!important;padding: 5px!important;}
 .mint-cell-title{text-align: center!important;}
 .mint-swipe-indicators{left: 80%!important;}
