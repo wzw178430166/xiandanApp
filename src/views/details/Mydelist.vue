@@ -146,7 +146,7 @@ export default {
     this.axios.get('details/',{params:{lid:this.$route.query.lid}}).then(res=>{
         console.log(res.data)
          this.products=res.data.products;
-         var oldVal=res.data.specs[0].sex; //取出性别
+         var oldVal=res.data.specs[0].sex; //取出 性别
          this.sex=oldVal; 
          this.specs=res.data.specs[0];
          });
