@@ -1,18 +1,6 @@
-import {dictionaries1,dictionaries2,bubbling} from '../../../public/statis/toole'
-export default {
-    data(){
-        return {
-           
-        }
-    },
-    methods:{
-      
-    },
-    created(){
-     //  var aae=dictionaries1('hellow World');
-      // var arr=[1,3,1,5,1,5]
-      // dictionaries2(arr); 
-      //console.log( bubbling([1,3,1,5,1,5]));
-    }
-
-}
+import tuan1  from '../img/details/lunbotu/01.jpg'
+import tuan2  from '../img/details/lunbotu/1.1.jpg'
+import tuan3  from '../img/details/lunbotu/1.2.jpg'
+import tuan4  from '../img/details/lunbotu/1.3.jpg'
+import tuan5  from '../img/details/lunbotu/1.4.jpg'
+import tuan6  from '../img/details/lunbotu/1.5.jpg'

@@ -90,8 +90,9 @@
           </p>
           <!-- 定时器 new Date(elem.shelf_time).toLocaleString()-->
           <p class="com_width97">
-            <span>还剩</span>     <!--:id="`reverse${i+1}`"-->
-            <span class="jieshuee"  :data-time="elem.shelf_time" ref="reverse">
+            <span>还剩</span>
+            <!--:id="`reverse${i+1}`"-->
+            <span class="jieshuee" :data-time="elem.shelf_time" ref="reverse">
               <em>00</em> <span class="spandou">天</span>
               <em>00</em> <span class="spandou">时</span>
               <em>00</em> <span class="spandou">分</span>
@@ -110,7 +111,7 @@
     <div class="nav_content">
       <div class="nav_article" v-for="(elem,i) of index3" :key="i">
         <router-link :to="elem.details">
-          <img v-lazy.container="elem.details_img" alt="" />
+          <img v-lazy.container="logo_st_ga[i]" alt="" />
           <h2 class="h2conm" v-text="elem.subtitle">荣耀V20 8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
           <p class="com_width97" v-text="elem.coupons">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
           <p class="com_width98" v-text="`￥${elem.price}`">￥259.00</p>
@@ -127,7 +128,7 @@
     <div class="nav_content">
       <div class="nav_article" v-for="(elem,i) of index4" :key="i">
         <router-link :to="elem.details">
-          <img v-lazy.container="elem.details_img" alt="" />
+          <img v-lazy.container="logo_st_sp[i]" alt="" />
           <h2 class="h2conm" v-text="elem.subtitle">荣耀V20 8GB+128GB 幻夜黑 移动联通电信4G全面屏手机 双卡双待</h2>
           <p class="com_width97" v-text="elem.coupons">输入蛋券sj07,满1000-30元,满3000-100元,数量有限,先到先得!</p>
           <p class="com_width98" v-text="`￥${elem.price}`">￥259.00</p>
@@ -138,22 +139,45 @@
   </div>
 </template>
 <script>
-  import index_head from '../../components/index_head/Index_head'
-  import Carousel from '../../components/lunbo/Carousel'
-  import index_car from './Index_car'
+  //猜你喜欢图片
+import tuan10  from '../../../public/img/details/lunbotu/10.1.jpg'
+import tuan11  from '../../../public/img/details/lunbotu/11.1.jpg'
+import tuan12  from '../../../public/img/details/lunbotu/12.1.jpg'
+import tuan13  from '../../../public/img/details/lunbotu/13.1.jpg'
+import tuan14  from '../../../public/img/details/lunbotu/14.1.jpg'
+import tuan15  from '../../../public/img/details/lunbotu/15.1.jpg'
+import tuan16  from '../../../public/img/details/lunbotu/16.1.jpg'
+import tuan17  from '../../../public/img/details/lunbotu/17.1.jpg'
+import tuan18  from '../../../public/img/details/lunbotu/18.1.jpg'
+import tuan19  from '../../../public/img/details/lunbotu/19.1.jpg'
+import tuan20  from '../../../public/img/details/lunbotu/20.1.jpg'
+//特惠特价
+import tuan4  from '../../../public/img/details/lunbotu/4.1.jpg'
+import tuan5  from '../../../public/img/details/lunbotu/5.1.jpg'
+import tuan6  from '../../../public/img/details/lunbotu/6.1.jpg'
+import tuan7  from '../../../public/img/details/lunbotu/7.1.jpg'
+import tuan8  from '../../../public/img/details/lunbotu/8.1.jpg'
+import tuan9  from '../../../public/img/details/lunbotu/9.1.jpg'
+import index_head from '../../components/index_head/Index_head'
+import Carousel from '../../components/lunbo/Carousel'
+import index_car from './Index_car'
   export default {
     data() {
       return {
+        //猜你喜欢
+        logo_st_ga:[tuan10,tuan11,tuan12,tuan13,tuan14,tuan15,tuan16,tuan17,tuan18,tuan19,tuan20],
+        //特惠特价
+        logo_st_sp:[tuan4,tuan5,tuan6,tuan7,tuan8,tuan9,tuan10,tuan11,tuan12,tuan13,tuan14,tuan15,tuan16,tuan17,tuan18,tuan19],
         host: this.host, //域名
         pics: [//轮播图片
-          { sm: 'http://wwwhui.applinzi.com/img/lunbotu/01.jpg' },
-          { sm: 'http://wwwhui.applinzi.com/img/lunbotu/02.jpg' }
+          // { sm: 'http://wwwhui.applinzi.com/img/lunbotu/01.jpg' },
+          // { sm: 'http://wwwhui.applinzi.com/img/lunbotu/02.jpg' }
         ],
         index1: [], //团购
         index2: [],   //抢购
         index3: [],    //猜你喜欢
         index4: [],    //特惠特价 
-        dingshiqi:0    //抢购  定时器的个数
+        dingshiqi: 0    //抢购  定时器的个数
       }
     },
     methods: {
@@ -161,7 +185,7 @@
       brinobj(index) {
         var timer = null;//这里设置time为null，用于下面来清除计时器
         var obj = this.$refs.reverse[index];
-       // console.log(obj);
+        // console.log(obj);
         timer = setInterval(() => {//设置定时器，来更新时间 
           var a = obj.getAttribute("data-time");
           var b = new Date().getTime();//这是获取当前时间，是一个不固定的数值
@@ -225,9 +249,9 @@
         return new Promise((open, err) => {
           var url = 'index/indexQiang';
           this.axios.get(url).then(res => {
-           // console.log(res.data);
+            // console.log(res.data);
             this.index2 = res.data;
-            this.dingshiqi=res.data.length;
+            this.dingshiqi = res.data.length;
             open();
           })
         });
@@ -257,16 +281,16 @@
         });
       },
       goindex() {
-    this.getindex_item1().then(() => {
-   this.getindex_item2().then(() => {
-   this.getindex_item3().then(() => {
-  this.getindex_item4().then(() => {  //数据加载完再执行定时器，渲染问题。在updated()执行数据会不断更新，所以会执行多次调用多次。           
-              for(var i=0;i<this.dingshiqi;i++){
-                this.brinobj(i); //今日好蛋倒计时     
-                this.brinobj(i); //今日好蛋倒计时
-                this.brinobj(i); //今日好蛋倒计时 
-                this.brinobj(i);
-              }     
+        this.getindex_item1().then(() => {
+          this.getindex_item2().then(() => {
+            this.getindex_item3().then(() => {
+              this.getindex_item4().then(() => {  //数据加载完再执行定时器，渲染问题。在updated()执行数据会不断更新，所以会执行多次调用多次。           
+                for (var i = 0; i < this.dingshiqi; i++) {
+                  this.brinobj(i); //今日好蛋倒计时     
+                  this.brinobj(i); //今日好蛋倒计时
+                  this.brinobj(i); //今日好蛋倒计时 
+                  this.brinobj(i);
+                }
               })
             })
           })
@@ -328,7 +352,7 @@
       this.brinobjindex('reverse'); //今日好蛋倒计时
       //今日好蛋倒计时
       this.goindex();
-     
+
       // setTimeout(()=>{
       // this.brinobj('reverse1');
       // this.brinobj('reverse2'); //今日好蛋倒计时

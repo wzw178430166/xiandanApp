@@ -21,7 +21,7 @@ Vue.config.productionTip = false
 //5: 设置请求的根路径 
 //Vue.http.options.root = "http://127.0.0.1:5050/vue_ser/";
 //6:全局设置post 时候表音的数据组织格式为 application/x-www-form-urlencoded
-Vue.prototype.host="http://127.0.0.1:5050/"  //域名
+Vue.prototype.host="/"  //域名   http://127.0.0.1:5050/
    // 定义全局过滤器（任意组件都可以使用）
 Vue.filter('sexFilter', function (oldVal, formatStr) {  //通过后台传回来的值可以一层一层过滤
      if(oldVal==1){

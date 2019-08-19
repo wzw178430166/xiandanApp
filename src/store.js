@@ -15,7 +15,7 @@ var mystore = new Vuex.Store({
     //购物车商品数量
     cartCount:0
     },
-  mutations:{ //修改全局共享数据函数
+  mutations:{ //修改全局共享数据函数   （只能是同步修改操作，需要异步在action里面写，但是最后还是要靠moutenrs修改）
     // 改变状态的方法也需要2个，一个是登录或注册了，一个是登出了
   // 这里不能写箭头函数???
   // 登录
@@ -68,6 +68,9 @@ var mystore = new Vuex.Store({
   //以异步的方式操作数据
   actions:{  //发请求  //  还要靠mutations:{ //修改全局共享数据函数
      
+         add(context){//参数执行上下文对象
+           context.commit('LOGIN');  //取在mutations里面的方法
+         }
   },
   modules:{  //子模块 例如用户用的，购物车用的
     
